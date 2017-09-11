@@ -1,5 +1,5 @@
 const express = require('express');
-const bodyParser= require('body-parser')
+const bodyParser = require('body-parser')
 const MongoClient = require('mongodb').MongoClient
 const Mongoose = require('mongoose');
 const app = express();
@@ -10,15 +10,15 @@ let myDeport = new Deporte({
     descripcion: "el deporte mas popular del mundo"
 })
 
-app.use(bodyParser.urlencoded({extended: true}))
-
-app.get('/', function (req, res) {
-    res.send('Hello World!');
-  });
+app.use(bodyParser.urlencoded({ extended: true }))
 
 Mongoose.createConnection('mongodb://localhost:27017/better', { config: { autoIndex: false } });
 
-  app.listen(3000, () => {
+app.get('*', function(req, res) {
+    res.sendfile('./views/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+});
+
+app.listen(3000, () => {
     console.log('listening on 3000')
     console.log(myDeport);
-  })
+})

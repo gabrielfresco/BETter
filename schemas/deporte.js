@@ -6,6 +6,7 @@ const deporteSchema = new Schema({
   descripcion: String,
 });
 
+
 const Deporte = mongoose.model('Deporte', deporteSchema);
 
 module.exports = Deporte;
