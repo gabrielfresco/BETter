@@ -6,7 +6,7 @@ export default function (app) {
         $stateProvider
             .state('home', {
                 url: `/home`,
-                templateUrl: `${window.BASE_URL}/views/home.html`,
+                templateUrl: `${window.BASE_URL}/resources/views/home.html`,
                 controller: 'HomeController',
                 controllerAs: 'homeCtrl'
             })
