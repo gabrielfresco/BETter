@@ -15,22 +15,16 @@
     <base href="/">
 
     <!-- Bootstrap core CSS -->
-    <link href="../resources/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+    <link href="../../resources/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+    <link href="../../resources/css/style.css" rel="stylesheet" media="screen" />
 
-    <script type="text/javascript" src="../../resources/js/angular.bundle.js"></script>
-    <script type="text/javascript" src="../../better/resources/js/bootstrap.bundle.js"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/evil-icons/1.9.0/evil-icons.min.css">
     <script src="https://cdn.jsdelivr.net/evil-icons/1.9.0/evil-icons.min.js"></script>
 
-    <!-- Custom styles for this template -->
-    <link href="../../mobility/resources/css/dashboard.css" rel="stylesheet">
-    <link href="../../mobility/resources/css/style.css" rel="stylesheet">
 
-    <link href="../../mobility/resources/css/angular-ui-notification.min.css" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link href="../../mobility/resources/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Font Awesome>
+    <link href="../../mobility/resources/css/font-awesome.min.css" rel="stylesheet" -->
 
 
     <!-- Plugins Styles -->
@@ -43,29 +37,40 @@
     <div ng-app="app">
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
-
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-                        aria-controls="navbar">
-                            <span class="sr-only">Toggle navigation</span> <span
-                                class="icon-bar"></span> <span class="icon-bar"></span> <span
-                                class="icon-bar"></span>
-                        </button>
-                    <a class="navbar-brand" th:href="@{/}"> <img
-                            src="../../mobility/resources/images/mobility_logo.png"
-                            width="160">
-                        </a>
-
-
-                </div>
                 <div class="row">
-                    <div class="navbar-header col-md-1 col-md-offset-9">
-                        <form method="post" action="mobility/logout" style="display: inline-block; float:right;">
-                            <button type="submit" class="btn btn-danger" style="margin-top: 7px;">
-                                    <span class="glyphicon glyphicon-off" aria-hidden="true"
-                                        style="margin-left: -2px;"></span>
-                                </button>
-                        </form>
+                    <div class="col col-md-10">
+                        <button ng-if="false" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                            aria-controls="navbar">
+							<span class="sr-only">Toggle navigation</span> <span
+								class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
+						</button>
+                        <a class="navbar-brand" th:href="@{/}"> <img
+							src="../../mobility/resources/images/mobility_logo.png"
+							width="160">
+						</a>
+                    </div>
+                    <div class="navbar-header col col-md-2 pull-right">
+                        <div style="float: right;">
+                            <a ui-sref="syncs" th:if="${hasImportErrors}" type="submit" ib-tooltip-append-to-body="true" uib-tooltip="Hay errores de sincronizacion"
+                                tooltip-placement="bottom" class="margin-right-10"> <img
+								width="30"
+								src="../../mobility/resources/images/notification.svg">
+							</a> <a ui-sref="syncs" th:if="!${hasImportErrors}" type="submit" ib-tooltip-append-to-body="true"
+                                uib-tooltip="No hay errores" tooltip-placement="bottom" class="margin-right-10"> <img
+								width="30"
+								src="../../mobility/resources/images/notification_disabled.svg">
+
+							</a> <span ng-controller="GlobalVarController" style="margin-top: 2vh; display: inline-block; color: #FFF; margin-right: 20px"
+                                th:text="${username}"></span>
+
+                            <form method="post" action="mobility/logout" style="display: inline-block;">
+                                <button type="submit" class="btn btn-danger">
+									<span class="glyphicon glyphicon-off" aria-hidden="true"
+										style="margin-left: -2px;"></span>
+								</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -77,20 +82,35 @@
                 <div class="sidebar">
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a ui-sref="home"> <img
-                                        src="../../mobility/resources/images/dash.svg"
-                                        class="center-block" width="22">
-                                </a></li>
-
-                            <li><a ui-sref="userList"> <img
-                                        src="../../mobility/resources/images/users.svg"
-                                        class="center-block" width="34">
-                                </a></li>
-
-                            <li><a ui-sref="usersRoutes"> <img
-                                        src="../../mobility/resources/images/ruta.svg"
-                                        class="center-block" width="34">
-                                </a></li>
+                            <li class="active"><a ui-sref="home" uib-tooltip-append-to-body="true" uib-tooltip="Dashboard" tooltip-placement="right"> <img
+									src="../../mobility/resources/images/dash.svg"
+									class="center-block" width="22">
+							</a></li>
+                            <li><a ui-sref="usersRoutes" uib-tooltip-append-to-body="true" uib-tooltip="Ruta" tooltip-placement="right"> <img
+									src="../../mobility/resources/images/ruta.svg"
+									class="center-block" width="34">
+							</a></li>
+                            <li><a ui-sref="syncs" uib-tooltip-append-to-body="true" uib-tooltip="Sincronizaci&oacute;n" tooltip-placement="right">
+									<img src="../../mobility/resources/images/sync.svg"
+									class="center-block" width="34">
+							</a></li>
+                            <li><a ui-sref="products" uib-tooltip-append-to-body="true" uib-tooltip="Productos" tooltip-placement="right"> <img
+									src="../../mobility/resources/images/box_icon.svg"
+									class="center-block" width="34">
+							</a></li>
+                            <li><a ui-sref="pdvs" uib-tooltip-append-to-body="true" uib-tooltip="PDVs" tooltip-placement="right"> <img
+									src="../../mobility/resources/images/iconomarket-01.svg"
+									class="center-block" width="34">
+							</a></li>
+                            <li><a ui-sref="userList" uib-tooltip-append-to-body="true" uib-tooltip="Usuarios" tooltip-placement="right"> <img
+									src="../../mobility/resources/images/users.svg"
+									class="center-block" width="34">
+							</a></li>
+                            <li><a ui-sref="configOptions" uib-tooltip-append-to-body="true" uib-tooltip="Configuraci&oacute;n"
+                                    tooltip-placement="right">
+									<img src="../../mobility/resources/images/config.svg"
+									class="center-block" width="34">
+							</a></li>
                         </ul>
                     </div>
                 </div>
@@ -101,7 +121,12 @@
                 </div>
             </div>
         </div>
+        <div class="modal-parent"></div>
     </div>
 </body>
+
+<script type="text/javascript" src="../../resources/js/angular.bundle.js"></script>
+<script type="text/javascript" src="../../resources/js/bootstrap.bundle.js"></script>
+<script type="text/javascript" src="../../resources/js/main.js"></script>
 
 </html>

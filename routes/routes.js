@@ -7,8 +7,8 @@ export default function (app) {
             .state('home', {
                 url: `/home`,
                 templateUrl: `${window.BASE_URL}/resources/views/home.html`,
-                controller: 'HomeController',
-                controllerAs: 'homeCtrl'
+                /*controller: 'HomeController',
+                controllerAs: 'homeCtrl'*/
             })
     }]);
 }

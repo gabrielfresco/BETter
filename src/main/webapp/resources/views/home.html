@@ -1,140 +1,137 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%>
-    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-    <html>
+<html>
 
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Mobility</title>
-    </head>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Home</title>
+</head>
 
-    <body class="ng-cloak">
-        <div class="row">
+<body class="ng-cloak">
+    <div class="row">
 
-            <div class="col-lg-12 col-md-12">
+        <div class="col-lg-12 col-md-12">
 
-                <h2 class="page-header margin-bottom-20">Panel de Control</h2>
+            <h2 class="page-header margin-bottom-20">Panel de Control</h2>
 
-                <h4 class="m-bottom-5">{{homeCtrl.fechaHoy}}</h4>
-                <h4 class="margin-no">
-                    <span class="text-small">Última sync {{homeCtrl.lastSyncDate}}</span>
-                </h4>
-            </div>
+            <h4 class="m-bottom-5">{{homeCtrl.fechaHoy}}</h4>
+            <h4 class="margin-no">
+                <span class="text-small">Última sync {{homeCtrl.lastSyncDate}}</span>
+            </h4>
+        </div>
 
-            <div class="col-lg-4 col-md-4 m-top-20">
-                <h4>
-                    Distribuidora / <span class="text-small"> F&B</span>
-                </h4>
-            </div>
-            <div class="col-lg-4 col-md-4 m-top-20">
-                <h4>
-                    Vendedores / <span class="text-small">{{homeCtrl.totalVendedores}}</span>
-                </h4>
-            </div>
+        <div class="col-lg-4 col-md-4 m-top-20">
+            <h4>
+                Distribuidora / <span class="text-small"> F&B</span>
+            </h4>
+        </div>
+        <div class="col-lg-4 col-md-4 m-top-20">
+            <h4>
+                Vendedores / <span class="text-small">{{homeCtrl.totalVendedores}}</span>
+            </h4>
+        </div>
 
-            <div class="clearfix margin-bottom-30"></div>
+        <div class="clearfix margin-bottom-30"></div>
 
-            <div class="col-lg-4 col-md-4">
-                <div class="panel panel-success">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-9">
-                                <div class="number">{{homeCtrl.totalPedidos}}</div>
-                            </div>
-                            <div class="col-xs-3">
-                                <img src="../../mobility/resources/images/pedidos.svg" width="50" class="pull-right">
-                            </div>
+        <div class="col-lg-4 col-md-4">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-9">
+                            <div class="number">{{homeCtrl.totalPedidos}}</div>
+                        </div>
+                        <div class="col-xs-3">
+                            <img src="../../mobility/resources/images/pedidos.svg" width="50" class="pull-right">
                         </div>
                     </div>
-
-                    <div class="panel-footer">
-                        <div class="text-category green">Pedidos Totales</div>
-                    </div>
-
                 </div>
-            </div>
 
-            <div class="col-lg-4 col-md-4">
-                <div class="panel panel-info">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-9">
-                                <div class="number">{{homeCtrl.totalBultos}}</div>
-                            </div>
-                            <div class="col-xs-3">
-                                <img src="../../mobility/resources/images/litros.svg" width="50" class="pull-right">
-                            </div>
+                <div class="panel-footer">
+                    <div class="text-category green">Pedidos Totales</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-9">
+                            <div class="number">{{homeCtrl.totalBultos}}</div>
+                        </div>
+                        <div class="col-xs-3">
+                            <img src="../../mobility/resources/images/litros.svg" width="50" class="pull-right">
                         </div>
                     </div>
-                    <div class="panel-footer">
-                        <div class="text-category blue-green">Bultos</div>
-                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div class="text-category blue-green">Bultos</div>
                 </div>
             </div>
+        </div>
 
-            <div class="col-lg-4 col-md-4">
-                <div class="panel panel-warning">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-9">
-                                <div class="number">
-                                    {{homeCtrl.totalClientesConPedidos}}<span> /de {{homeCtrl.totalClientes}} </span>
-                                </div>
-                            </div>
-                            <div class="col-xs-3">
-                                <img src="../../mobility/resources/images/vendedores.svg" width="50" class="pull-right">
+        <div class="col-lg-4 col-md-4">
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-9">
+                            <div class="number">
+                                {{homeCtrl.totalClientesConPedidos}}<span> /de {{homeCtrl.totalClientes}} </span>
                             </div>
                         </div>
-                    </div>
-                    <div class="panel-footer">
-                        <div class="text-category orange">Clientes con Compras</div>
+                        <div class="col-xs-3">
+                            <img src="../../mobility/resources/images/vendedores.svg" width="50" class="pull-right">
+                        </div>
                     </div>
                 </div>
+                <div class="panel-footer">
+                    <div class="text-category orange">Clientes con Compras</div>
+                </div>
             </div>
+        </div>
 
-            <div class="col-sm-12 col-md-12 margin-top-30">
-                <h4 class="page-header m-bottom-no">Listado de Vendedores</h4>
+        <div class="col-sm-12 col-md-12 margin-top-30">
+            <h4 class="page-header m-bottom-no">Listado de Vendedores</h4>
 
-                <uib-accordion close-others="true">
-                    <div uib-accordion-group is-open="false" ng-repeat="vend in homeCtrl.vendedores" ng-click="homeCtrl.verPedidos(vend.codVendedor)">
-                        <uib-accordion-heading>
-                            <div class="row">
-                                <div class="col-lg-2 col-md-2">
-                                    <h4 class="light">{{vend.nombre}}</h4>
-                                </div>
+            <uib-accordion close-others="true">
+                <div uib-accordion-group is-open="false" ng-repeat="vend in homeCtrl.vendedores" ng-click="homeCtrl.verPedidos(vend.codVendedor)">
+                    <uib-accordion-heading>
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2">
+                                <h4 class="light">{{vend.nombre}}</h4>
+                            </div>
 
-                                <div class="col-lg-3 col-md-3">
-                                    <div class="panel panel-success">
-                                        <div class="panel-body">
-                                            <div class="text-category-s green">
-                                                Pedidos Totales: <strong>{{vend.indices[0]}}</strong>
-                                            </div>
+                            <div class="col-lg-3 col-md-3">
+                                <div class="panel panel-success">
+                                    <div class="panel-body">
+                                        <div class="text-category-s green">
+                                            Pedidos Totales: <strong>{{vend.indices[0]}}</strong>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="col-lg-3 col-md-3">
-                                    <div class="panel panel-info">
-                                        <div class="panel-body">
-                                            <div class="text-category-s blue-green">
-                                                Cantidad de Bultos: <strong>{{vend.indices[1]}}</strong>
-                                            </div>
+                            <div class="col-lg-3 col-md-3">
+                                <div class="panel panel-info">
+                                    <div class="panel-body">
+                                        <div class="text-category-s blue-green">
+                                            Cantidad de Bultos: <strong>{{vend.indices[1]}}</strong>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="col-lg-3 col-md-3">
-                                    <div class="panel panel-warning">
-                                        <div class="panel-body">
-                                            <div class="text-category-s orange">
-                                                Clientes con Compra: <strong>{{vend.indices[2]}} / de {{vend.indices[3]}}</strong>
-                                            </div>
+                            <div class="col-lg-3 col-md-3">
+                                <div class="panel panel-warning">
+                                    <div class="panel-body">
+                                        <div class="text-category-s orange">
+                                            Clientes con Compra: <strong>{{vend.indices[2]}} / de {{vend.indices[3]}}</strong>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="col-lg-1 col-md-1">
-                                    <a class="arrow" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"> <img
+                            <div class="col-lg-1 col-md-1">
+                                <a class="arrow" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"> <img
                         src="../../mobility/resources/images/arrow-down.svg"
                         class="center-block" width="34" style="margin-top: 10px;">
                         <img src="../../mobility/resources/images/arrow-up.svg"
@@ -142,41 +139,41 @@ pageEncoding="UTF-8"%>
                         style="display: none; margin-top: 10px;">
 
                     </a>
-                                </div>
                             </div>
-                        </uib-accordion-heading>
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-
-                                <thead>
-                                    <tr>
-                                        <th>Cliente</th>
-                                        <th>Cantidad de Bultos</th>
-                                        <th>Total Pedido</th>
-                                        <th>Fecha</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <tr ng-repeat="pedido in homeCtrl.currentVendedorPedidos">
-                                        <td>{{pedido.pdv}}</td>
-
-                                        <td>{{pedido.bultos}}</td>
-
-                                        <td>$ {{pedido.valor}}</td>
-
-                                        <td>{{homeCtrl.parseDate(pedido.fecha)}}</td>
-
-                                    </tr>
-                                </tbody>
-
-
-                            </table>
                         </div>
-                    </div>
-                </uib-accordion>
-            </div>
-        </div>
-    </body>
+                    </uib-accordion-heading>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
 
-    </html>
+                            <thead>
+                                <tr>
+                                    <th>Cliente</th>
+                                    <th>Cantidad de Bultos</th>
+                                    <th>Total Pedido</th>
+                                    <th>Fecha</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr ng-repeat="pedido in homeCtrl.currentVendedorPedidos">
+                                    <td>{{pedido.pdv}}</td>
+
+                                    <td>{{pedido.bultos}}</td>
+
+                                    <td>$ {{pedido.valor}}</td>
+
+                                    <td>{{homeCtrl.parseDate(pedido.fecha)}}</td>
+
+                                </tr>
+                            </tbody>
+
+
+                        </table>
+                    </div>
+                </div>
+            </uib-accordion>
+        </div>
+    </div>
+</body>
+
+</html>
