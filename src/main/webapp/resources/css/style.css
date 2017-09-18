@@ -7,6 +7,45 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
+/* Sidebar */
+
+@media ( min-width: 768px) {
+	.sidebar {
+		z-index: 1;
+		position: fixed;
+		padding: 0;
+		background-image: linear-gradient(to top, #ff8a80 0%, #ff1744 100%);
+		min-height: 1000px;
+		padding-top: 20px;
+	}
+	.navbar-nav {
+		width: 100%;
+	}
+	.navbar-collapse {
+		padding: 0;
+	}
+}
+
+@media ( max-width: 768px) {
+	.main {
+		padding-right: 40px;
+		padding-left: 40px;
+	}
+	.collapse.in {
+		background: #ff1744;
+		transition-duration: 0.2s;
+	}
+	.perfil {
+		float: left;
+	}
+	li.dropdown.perfil .dropdown-menu {
+		right: inherit;
+		float: left;
+		left: 0;
+	}
+}
+
+
 /* Margins & Paddings */
 .margin-top-100 {
 	margin-top: 100px;

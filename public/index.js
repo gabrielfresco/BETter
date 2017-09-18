@@ -7,6 +7,8 @@ window.BASE_URL = "http://localhost:3000";
 
 export const app = angular.module('app', ['ui.router', 'localytics.directives']);
 
+routes(app);
+
 app.config(function ($urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise('/home');
     $locationProvider.html5Mode(true);
