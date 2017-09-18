@@ -10,5 +10,11 @@ export default function (app) {
                 /*controller: 'HomeController',
                 controllerAs: 'homeCtrl'*/
             })
+            .state('admin', {
+                url: `/admin`,
+                templateUrl: `${window.BASE_URL}/resources/views/admin.html`,
+                /*controller: 'HomeController',
+                controllerAs: 'homeCtrl'*/
+            })
     }]);
 }
