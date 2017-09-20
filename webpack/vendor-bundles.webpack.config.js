@@ -5,7 +5,7 @@ module.exports = {
   entry: {
     // create two library bundles, one with jQuery and
     // another with Angular and related libraries
-    //'jquery': ['jquery'],
+    'jquery': ['jquery'],
     'angular': ['angular', 'angular-ui-router'],
     //'moment': ['moment'],
     'bootstrap': ['bootstrap']

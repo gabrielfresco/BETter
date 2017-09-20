@@ -103,6 +103,8 @@ window.BASE_URL = "http://localhost:3000";
 
 var app = exports.app = _angular2.default.module('app', ['ui.router', 'localytics.directives']);
 
+(0, _routes2.default)(app);
+
 app.config(function ($urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise('/home');
     $locationProvider.html5Mode(true);
@@ -118,7 +120,7 @@ module.exports = (__webpack_require__(0))(22);
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(0))(60);
+module.exports = (__webpack_require__(0))(62);
 
 /***/ }),
 /* 4 */
@@ -306,9 +308,14 @@ exports.default = function (app) {
     app.config(['$stateProvider', function ($stateProvider) {
         $stateProvider.state('home', {
             url: '/home',
-            templateUrl: window.BASE_URL + '/resources/views/home.html',
-            controller: 'HomeController',
-            controllerAs: 'homeCtrl'
+            templateUrl: window.BASE_URL + '/resources/views/home.html'
+            /*controller: 'HomeController',
+            controllerAs: 'homeCtrl'*/
+        }).state('admin', {
+            url: '/admin',
+            templateUrl: window.BASE_URL + '/resources/views/admin.html'
+            /*controller: 'HomeController',
+            controllerAs: 'homeCtrl'*/
         });
     }]);
 };

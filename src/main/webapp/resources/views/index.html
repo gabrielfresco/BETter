@@ -32,98 +32,107 @@
 </head>
 
 <body>
+  <!-- Navbar -->
 
+  <nav class="navbar navbar-expand-md navbar-toggleable-md navbar-white fixed-top bg-white">
+     <a class="navbar-brand" href="#">
+        <img src="./assets/images-own/logo.png" width="66" height="30" class="d-inline-block align-top" alt="">
+      </a>
+    <button class="navbar-toggler d-lg-none bg-primary navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <div ng-app="app">
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col col-md-10">
-                        <button ng-if="false" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-                            aria-controls="navbar">
-							<span class="sr-only">Toggle navigation</span> <span
-								class="icon-bar"></span> <span class="icon-bar"></span> <span
-								class="icon-bar"></span>
-						</button>
-                        <a class="navbar-brand" th:href="@{/}"> <img
-							src="../../mobility/resources/images/mobility_logo.png"
-							width="160">
-						</a>
-                    </div>
-                    <div class="navbar-header col col-md-2 pull-right">
-                        <div style="float: right;">
-                            <a ui-sref="syncs" th:if="${hasImportErrors}" type="submit" ib-tooltip-append-to-body="true" uib-tooltip="Hay errores de sincronizacion"
-                                tooltip-placement="bottom" class="margin-right-10"> <img
-								width="30"
-								src="../../mobility/resources/images/notification.svg">
-							</a> <a ui-sref="syncs" th:if="!${hasImportErrors}" type="submit" ib-tooltip-append-to-body="true"
-                                uib-tooltip="No hay errores" tooltip-placement="bottom" class="margin-right-10"> <img
-								width="30"
-								src="../../mobility/resources/images/notification_disabled.svg">
+    
 
-                            <form method="post" action="mobility/logout" style="display: inline-block;">
-                                <button type="submit" class="btn btn-danger">
-									<span class="glyphicon glyphicon-off" aria-hidden="true"
-										style="margin-left: -2px;"></span>
-								</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Login</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-
-        <div class="container-fluid">
-            <div class="row">
-                <div class="sidebar">
-                    <div id="navbar" class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a ui-sref="home" uib-tooltip-append-to-body="true" uib-tooltip="Dashboard" tooltip-placement="right"> <img
-									src="../../mobility/resources/images/dash.svg"
-									class="center-block" width="22">
-							</a></li>
-                            <li><a ui-sref="usersRoutes" uib-tooltip-append-to-body="true" uib-tooltip="Ruta" tooltip-placement="right"> <img
-									src="../../mobility/resources/images/ruta.svg"
-									class="center-block" width="34">
-							</a></li>
-                            <li><a ui-sref="syncs" uib-tooltip-append-to-body="true" uib-tooltip="Sincronizaci&oacute;n" tooltip-placement="right">
-									<img src="../../mobility/resources/images/sync.svg"
-									class="center-block" width="34">
-							</a></li>
-                            <li><a ui-sref="products" uib-tooltip-append-to-body="true" uib-tooltip="Productos" tooltip-placement="right"> <img
-									src="../../mobility/resources/images/box_icon.svg"
-									class="center-block" width="34">
-							</a></li>
-                            <li><a ui-sref="pdvs" uib-tooltip-append-to-body="true" uib-tooltip="PDVs" tooltip-placement="right"> <img
-									src="../../mobility/resources/images/iconomarket-01.svg"
-									class="center-block" width="34">
-							</a></li>
-                            <li><a ui-sref="userList" uib-tooltip-append-to-body="true" uib-tooltip="Usuarios" tooltip-placement="right"> <img
-									src="../../mobility/resources/images/users.svg"
-									class="center-block" width="34">
-							</a></li>
-                            <li><a ui-sref="configOptions" uib-tooltip-append-to-body="true" uib-tooltip="Configuraci&oacute;n"
-                                    tooltip-placement="right">
-									<img src="../../mobility/resources/images/config.svg"
-									class="center-block" width="34">
-							</a></li>
+<!-- SideBar -->
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-sidebar sidebar">
+          <ul class="nav nav-pills flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Inicio <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./eventos.html">Eventos</a>
+            </li>
+             <li class="nav-item">
+                    <a class="nav-link collapsed" href="#submenu1" data-toggle="collapse" data-target="#submenu1">Deportes</a>
+                    <div class="collapse" id="submenu1" aria-expanded="false">
+                        <ul class="flex-column pl-2 nav">
+                            <li class="nav-item"><a class="nav-link py-0" href="">Basquet</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link collapsed py-0" href="#submenu1sub1" data-toggle="collapse" data-target="#submenu1sub1">Futbol</a>
+                                <div class="collapse small" id="submenu1sub1" aria-expanded="false">
+                                    <ul class="flex-column nav pl-4">
+                                        <li class="nav-item">
+                                            <a class="nav-link p-0" href="">
+                                                <i class="fa fa-fw fa-clock-o"></i> Liga Argentina
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link p-0" href="">
+                                                <i class="fa fa-fw fa-dashboard"></i> Liga Española
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link p-0" href="">
+                                                <i class="fa fa-fw fa-bar-chart"></i> Liga Inglesa
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link p-0" href="">
+                                                <i class="fa fa-fw fa-compass"></i> Liga Belga
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
                         </ul>
                     </div>
-                </div>
+                </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Premios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Ranking</a>
+            </li>
+          </ul>
 
-                <div class="col-sm-12 col-md-12 main">
-                    <!--  Content Page  -->
-                    <ui-view></ui-view>
-                </div>
-            </div>
-        </div>
-        <div class="modal-parent"></div>
+          <ul class="nav nav-pills flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="#">aaa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">bbb</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">ccc</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">ddd</a>
+            </li>
+          </ul>
+        </nav>
+
+<!-- Main Content -->
+
+        
+      </div>
     </div>
 </body>
 
 <script type="text/javascript" src="../../resources/js/angular.bundle.js"></script>
 <script type="text/javascript" src="../../resources/js/bootstrap.bundle.js"></script>
+<script type="text/javascript" src="../../resources/js/jquery.bundle.js"></script>
 <script type="text/javascript" src="../../resources/js/main.js"></script>
 
 </html>

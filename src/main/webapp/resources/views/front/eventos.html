@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en" data-livestyle-extension="available">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <link rel="icon" href="https://getbootstrap.com/favicon.ico">
+      <title>Template</title>
+      <!-- Bootstrap CSS -->
+      <link href="./css/bootstrap.min.css" rel="stylesheet">
+      <!-- Template -->
+      <link href="./css/dashboard.css" rel="stylesheet">
+   </head>
+   <body>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-md navbar-toggleable-md navbar-white fixed-top bg-white">
+         <a class="navbar-brand" href="./index.html">
+         <img src="./assets/images-own/logo.png" width="66" height="30" class="d-inline-block align-top" alt="">
+         </a>
+         <button class="navbar-toggler d-lg-none bg-primary navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item active">
+                  <a class="nav-link" href="#">Login</a>
+               </li>
+            </ul>
+         </div>
+      </nav>
+      <!-- SideBar -->
+      <div class="container-fluid">
+      <div class="row">
+      <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-sidebar sidebar">
+         <ul class="nav nav-pills flex-column">
+            <li class="nav-item">
+               <a class="nav-link active" href="#">Inicio <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#">Eventos</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link collapsed" href="#submenu1" data-toggle="collapse" data-target="#submenu1">Deportes</a>
+               <div class="collapse" id="submenu1" aria-expanded="false">
+                  <ul class="flex-column pl-2 nav">
+                     <li class="nav-item"><a class="nav-link py-0" href="">Basquet</a></li>
+                     <li class="nav-item">
+                        <a class="nav-link collapsed py-0" href="#submenu1sub1" data-toggle="collapse" data-target="#submenu1sub1">Futbol</a>
+                        <div class="collapse small" id="submenu1sub1" aria-expanded="false">
+                           <ul class="flex-column nav pl-4">
+                              <li class="nav-item">
+                                 <a class="nav-link p-0" href="">
+                                 <i class="fa fa-fw fa-clock-o"></i> Liga Argentina
+                                 </a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link p-0" href="">
+                                 <i class="fa fa-fw fa-dashboard"></i> Liga Española
+                                 </a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link p-0" href="">
+                                 <i class="fa fa-fw fa-bar-chart"></i> Liga Inglesa
+                                 </a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link p-0" href="">
+                                 <i class="fa fa-fw fa-compass"></i> Liga Belga
+                                 </a>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#">Premios</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#">Ranking</a>
+            </li>
+         </ul>
+         <ul class="nav nav-pills flex-column">
+            <li class="nav-item">
+               <a class="nav-link" href="#">aaa</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#">bbb</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#">ccc</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#">ddd</a>
+            </li>
+         </ul>
+      </nav>
+      <!-- Main Content -->
+      <main class="col-sm-9 ml-sm-auto col-md-10 pt-3 bg-light" role="main">
+      <h1>Eventos</h1>
+      <div class="container">
+
+     <div class="card-columns">
+
+      <!-- Aca va el for de eventos -->
+
+        <div class="card card-futbol">
+          <div class="card-header">
+            <h3>Futbol - Liga Argentina</h3>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md text-center">
+                 <img src="./assets/images-team/futbol/lanus.png" class="img-fluid-teams-small">   
+                 <h4 class="text-center">Lanus</h4> 
+              </div>
+              <div class="col-md text-center">
+                 <div class="vs">
+                    <h2>
+                    VS
+                    </h2>
+                 </div>
+              </div>
+              <div class="col-md text-center">
+                 <img src="./assets/images-team/futbol/boca.png" class="img-fluid-teams-small">  
+                 <h4 class="text-center">Boca Junios</h4> 
+              </div>
+           </div>
+           </div>
+           <div class="card-footer bg-transparent border-transparent">
+           <p class="lead text-center">
+              <a class="btn btn-primary btn-lg" href="apuesta.html" role="button">Apostar</a>
+           </p>
+           </div>
+          </div>
+
+
+        <div class="card card-futbol">
+          <div class="card-header">
+            <h3>Futbol - Liga Argentina</h3>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md text-center">
+                 <img src="./assets/images-team/futbol/river.png" class="img-fluid-teams-small">   
+                 <h4 class="text-center">River Plate</h4> 
+              </div>
+              <div class="col-md text-center">
+                 <div class="vs">
+                    <h2>
+                    VS
+                    </h2>
+                 </div>
+              </div>
+              <div class="col-md text-center">
+                 <img src="./assets/images-team/futbol/banfield.png" class="img-fluid-teams-small">  
+                 <h4 class="text-center">Banfield</h4> 
+              </div>
+           </div>
+           </div>
+           <div class="card-footer bg-transparent border-transparent">
+           <p class="lead text-center">
+              <a class="btn btn-primary btn-lg" href="#" role="button">Apostar</a>
+           </p>
+          </div>
+          </div>
+
+        <div class="card card-futbol">
+          <div class="card-header">
+            <h3>Futbol - Liga Argentina</h3>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md text-center">
+                 <img src="./assets/images-team/futbol/rosario.png" class="img-fluid-teams-small">   
+                 <h4 class="text-center">Rosario Central</h4> 
+              </div>
+              <div class="col-md text-center">
+                 <div class="vs">
+                    <h2>
+                    VS
+                    </h2>
+                 </div>
+              </div>
+              <div class="col-md text-center">
+                 <img src="./assets/images-team/futbol/san-lorenzo.png" class="img-fluid-teams-small">  
+                 <h4 class="text-center">San Lorenzo de Almagro</h4> 
+              </div>
+           </div>
+           </div>
+           <div class="card-footer bg-transparent border-transparent">
+           <p class="lead text-center">
+              <a class="btn btn-primary btn-lg" href="#" role="button">Apostar</a>
+           </p>
+          </div>
+          </div>
+
+        <div class="card card-futbol">
+          <div class="card-header">
+            <h3>Futbol - Liga Argentina</h3>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md text-center">
+                 <img src="./assets/images-team/futbol/tigre.png" class="img-fluid-teams-small">   
+                 <h4 class="text-center">Tigre</h4> 
+              </div>
+              <div class="col-md text-center">
+                 <div class="vs">
+                    <h2>
+                    VS
+                    </h2>
+                 </div>
+              </div>
+              <div class="col-md text-center">
+                 <img src="./assets/images-team/futbol/chacarita.png" class="img-fluid-teams-small">  
+                 <h4 class="text-center">Chacarita</h4> 
+              </div>
+           </div>
+           </div>
+           <div class="card-footer bg-transparent border-transparent">
+           <p class="lead text-center">
+              <a class="btn btn-primary btn-lg" href="#" role="button">Apostar</a>
+           </p>
+          </div>
+          </div>
+
+        <div class="card card-futbol">
+          <div class="card-header">
+            <h3>Futbol - Liga Argentina</h3>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md text-center">
+                 <img src="./assets/images-team/futbol/estudiantes.png" class="img-fluid-teams-small">   
+                 <h4 class="text-center">Estudiantes de la plata</h4> 
+              </div>
+              <div class="col-md text-center">
+                 <div class="vs">
+                    <h2>
+                    VS
+                    </h2>
+                 </div>
+              </div>
+              <div class="col-md text-center">
+                 <img src="./assets/images-team/futbol/defensa.png" class="img-fluid-teams-small">  
+                 <h4 class="text-center">Defensa y Justicia</h4> 
+              </div>
+           </div>
+           </div>
+           <div class="card-footer bg-transparent border-transparent">
+           <p class="lead text-center">
+              <a class="btn btn-primary btn-lg" href="#" role="button">Apostar</a>
+           </p>
+          </div>
+          </div>
+
+             <div class="card card-tenis">
+          <div class="card-header">
+            <h3>Tenis - US-OPEN</h3>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md text-center">
+                 <img src="./assets/images-team/tenis/del-potro.png" class="img-fluid-teams-small">   
+                 <h4 class="text-center">Del Potro</h4> 
+              </div>
+              <div class="col-md text-center">
+                 <div class="vs">
+                    <h2>
+                    VS
+                    </h2>
+                 </div>
+              </div>
+              <div class="col-md text-center">
+                 <img src="./assets/images-team/tenis/nadal.png" class="img-fluid-teams-small">  
+                 <h4 class="text-center">Rafael Nadal</h4> 
+              </div>
+           </div>
+           </div>
+           <div class="card-footer bg-transparent border-transparent">
+           <p class="lead text-center">
+              <a class="btn btn-primary btn-lg" href="#" role="button">Apostar</a>
+           </p>
+          </div>
+          </div>
+
+      <!--
+        <div class="jumbotron">
+           <h3>Futbol</h3>
+           <p class="lead">Liga Argentina</p>
+           <hr class="my-4">
+           <div class="row">
+              <div class="col-md text-center">
+                 <img src="./assets/images-team/lanus.png" class="img-fluid-teams-small">   
+                 <h4 class="text-center">Lanus</h4> 
+              </div>
+              <div class="col-md text-center">
+                 <div class="vs">
+                    <h1>
+                    VS
+                    <h1>
+                 </div>
+              </div>
+              <div class="col-md text-center">
+                 <img src="./assets/images-team/boca.png" class="img-fluid-teams-small">  
+                 <h4 class="text-center">Boca Junios</h4> 
+              </div>
+           </div>
+           <p class="lead text-center">
+              <a class="btn btn-primary btn-lg" href="#" role="button">Apostar</a>
+           </p>
+        </div>
+
+
+        </div>
+
+        <div class="col-xs-1">
+        <div class="jumbotron ">
+           <h3>Futbol</h3>
+           <p class="lead">Liga Argentina</p>
+           <hr class="my-4">
+           <div class="row">
+              <div class="col-md text-center">
+                 <img src="./assets/images-team/river.png" class="img-fluid-teams-small"> 
+                 <h4 class="text-center">River</h4> 
+              </div>
+              <div class="col-md text-center">
+                 <div class="vs">
+                    <h1>
+                    VS
+                    <h1>
+                 </div>
+              </div>
+              <div class="col-md text-center">
+                 <img src="./assets/images-team/banfield.png" class="img-fluid-teams-small"> 
+                 <h4 class="text-center">Banfield</h4> 
+              </div>
+           </div>
+           <p class="lead text-center">
+              <a class="btn btn-primary btn-lg" href="#" role="button">Apostar</a>
+           </p>
+        </div>
+
+        </div>
+
+        <div class="col-xs-1">
+
+                <div class="jumbotron">
+           <h3>Futbol</h3>
+           <p class="lead">Liga Argentina</p>
+           <hr class="my-4">
+           <div class="row">
+              <div class="col-md text-center">
+                 <img src="./assets/images-team/rosario.png" class="img-fluid-teams-small"> 
+                 <h4 class="text-center">Rosario Central</h4> 
+              </div>
+              <div class="col-md text-center">
+                 <div class="vs">
+                    <h1>
+                    VS
+                    <h1>
+                 </div>
+              </div>
+              <div class="col-md text-center">
+                 <img src="./assets/images-team/sanlorenzo.png" class="img-fluid-teams-small">  
+                 <h4 class="text-center">San Lorenzo</h4> 
+              </div>
+           </div>
+           <p class="lead text-center">
+              <a class="btn btn-primary btn-lg" href="#" role="button">Apostar</a>
+           </p>
+        </div>
+
+        </div>
+
+
+         <div class="col-xs-1">
+
+                <div class="jumbotron">
+           <h3>Futbol</h3>
+           <p class="lead">Liga Argentina</p>
+           <hr class="my-4">
+           <div class="row">
+              <div class="col-md text-center">
+                 <img src="./assets/images-team/tigre.png" class="img-fluid-teams-small"> 
+                 <h4 class="text-center">Tigre</h4> 
+              </div>
+              <div class="col-md text-center">
+                 <div class="vs">
+                    <h1>
+                    VS
+                    <h1>
+                 </div>
+              </div>
+              <div class="col-md text-center">
+                 <img src="./assets/images-team/chacarita.png" class="img-fluid-teams-small">  
+                 <h4 class="text-center">Chacarita</h4> 
+              </div>
+           </div>
+           <p class="lead text-center">
+              <a class="btn btn-primary btn-lg" href="#" role="button">Apostar</a>
+           </p>
+        </div>
+
+        </div>
+
+
+         <div class="col-xs-1">
+
+                <div class="jumbotron">
+           <h3>Futbol</h3>
+           <p class="lead">Liga Argentina</p>
+           <hr class="my-4">
+           <div class="row">
+              <div class="col-md text-center">
+                 <img src="./assets/images-team/estudiantes.png" class="img-fluid-teams-small"> 
+                 <h4 class="text-center">Estudiantes de la plata</h4> 
+              </div>
+              <div class="col-md text-center">
+                 <div class="vs">
+                    <h1>
+                    VS
+                    <h1>
+                 </div>
+              </div>
+              <div class="col-md text-center">
+                 <img src="./assets/images-team/defensa.png" class="img-fluid-teams-small">   
+                 <h4 class="text-center">Defensa y Justicia</h4> 
+              </div>
+           </div>
+           <p class="lead text-center">
+              <a class="btn btn-primary btn-lg margin-top" href="#" role="button">Apostar</a>
+           </p>
+        </div>
+ -->
+        </div>
+
+     
+      <!-- Aca termina el for de eventos -->
+      <!-- Carga mas rapido si esta al final los js -->
+      <script src="../js/jquery.min.js" ></script>
+      <script src="../js/popper.min.js.descarga"></script>
+      <script src="../js/bootstrap.min.js.descarga"></script>
+      <!-- IE10 bug -->
+      <script src="../js/ie10-viewport-bug-workaround.js.descarga"></script>
+   </body>
+</html>
