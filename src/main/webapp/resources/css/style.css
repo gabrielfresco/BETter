@@ -12,7 +12,9 @@ h1 {
   height: 100%;
 }
 
-
+.bg-transparent {
+  background-color: transparent;
+}
 
 .sidebar {
   position: fixed;

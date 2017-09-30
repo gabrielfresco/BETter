@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../mobility/resources/images/favicon.png">
+
+  <title>Mobility</title>
+
+  <base href="/">
+
+  <!-- Bootstrap core CSS -->
+  <link href="../../resources/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+  <link href="../../resources/css/style.css" rel="stylesheet" media="screen" />
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/evil-icons/1.9.0/evil-icons.min.css">
+  <script src="https://cdn.jsdelivr.net/evil-icons/1.9.0/evil-icons.min.js"></script>
+
+
+  <!-- Font Awesome>
+    <link href="../../mobility/resources/css/font-awesome.min.css" rel="stylesheet" -->
+
+
+  <!-- Plugins Styles -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+</head>
+
+<body>
+  <!-- SideBar -->
+  <div class="container-fluid">
+    <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-sidebar sidebar">
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Inicio <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Eventos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#submenu1" data-toggle="collapse" data-target="#submenu1">Deportes</a>
+          <div class="collapse" id="submenu1" aria-expanded="false">
+            <ul class="flex-column pl-2 nav">
+              <li class="nav-item"><a class="nav-link py-0" href="">Basquet</a></li>
+              <li class="nav-item">
+                <a class="nav-link collapsed py-0" href="#submenu1sub1" data-toggle="collapse" data-target="#submenu1sub1">Futbol</a>
+                <div class="collapse small" id="submenu1sub1" aria-expanded="false">
+                  <ul class="flex-column nav pl-4">
+                    <li class="nav-item">
+                      <a class="nav-link p-0" href="">
+                                  <i class="fa fa-fw fa-clock-o"></i> Liga Argentina
+                                  </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link p-0" href="">
+                                  <i class="fa fa-fw fa-dashboard"></i> Liga Española
+                                  </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link p-0" href="">
+                                  <i class="fa fa-fw fa-bar-chart"></i> Liga Inglesa
+                                  </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link p-0" href="">
+                                  <i class="fa fa-fw fa-compass"></i> Liga Belga
+                                  </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="premios">Premios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Ranking</a>
+        </li>
+      </ul>
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+          <a class="nav-link" href="#">aaa</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">bbb</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">ccc</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">ddd</a>
+        </li>
+      </ul>
+    </nav>
+
+    <ui-view>
+    </ui-view>
+    <!-- Main Content -->
+  </div>
+</body>
+
+<script type="text/javascript" src="../../resources/js/angular.bundle.js"></script>
+<script type="text/javascript" src="../../resources/js/bootstrap.bundle.js"></script>
+<script type="text/javascript" src="../../resources/js/jquery.bundle.js"></script>
+<script type="text/javascript" src="../../resources/js/main.js"></script>
+
+</html>
