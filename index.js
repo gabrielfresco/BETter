@@ -15,8 +15,11 @@ app.use(bodyParser.urlencoded({ extended: true }))
 Mongoose.createConnection('mongodb://localhost:27017/better', { config: { autoIndex: false } });
 
 
-
 app.use('/', express.static("./src/main/webapp/"));
+
+app.get('/admin/*', function(req, res){
+    res.sendfile('./src/main/webapp/resources/views/admin/index.html');
+});
 
 app.get('*', function(req, res) {
     res.sendfile('./src/main/webapp/resources/views/index.html'); // load the single view file (angular will handle the page changes on the front-end)

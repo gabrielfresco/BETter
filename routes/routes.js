@@ -11,8 +11,8 @@ export default function (app) {
                 controllerAs: 'homeCtrl'*/
             })
             .state('admin', {
-                url: `/admin`,
-                templateUrl: `${window.BASE_URL}/resources/views/admin.html`,
+                url: `/admin/login`,
+                templateUrl: `${window.BASE_URL}/resources/views/admin/login.html`,
                 /*controller: 'HomeController',
                 controllerAs: 'homeCtrl'*/
             })

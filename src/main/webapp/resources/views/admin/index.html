@@ -1,98 +1,95 @@
 <!DOCTYPE html>
-<html lang="en" data-livestyle-extension="available">
-   <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta name="description" content="">
-      <meta name="author" content="">
-      <link rel="icon" href="https://getbootstrap.com/favicon.ico">
-      <title>Template</title>
-      <!-- Bootstrap CSS -->
-      <link href="../css/bootstrap.min.css" rel="stylesheet">
-      <!-- Template -->
-      <link href="../css/dashboard.css" rel="stylesheet">
-   </head>
-   <body id="login-adm-page">
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-md navbar-toggleable-md navbar-white fixed-top bg-white">
-         <a class="navbar-brand" href="../index.html">
-         <img src="../assets/images-own/logo.png" width="66" height="30" class="d-inline-block align-top" alt="">
+<html ng-app="app" lang="en" data-livestyle-extension="available">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="https://getbootstrap.com/favicon.ico">
+  <title>Admin</title>
+  <base href="/">
+  <!-- Bootstrap core CSS -->
+  <link href="../../resources/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+  <link href="../../resources/css/admin.css" rel="stylesheet" media="screen" />
+</head>
+
+<body id="login-adm-page">
+  <!-- Navbar -->
+  <div ng-app="app">
+    <nav class="navbar navbar-expand-md navbar-toggleable-md navbar-white fixed-top bg-white">
+      <a class="navbar-brand" href="../index.html">
+         <img src="../../resources/assets/images-own/logo.png" width="66" height="30" class="d-inline-block align-top" alt="">
          </a>
-         <button class="navbar-toggler d-lg-none bg-primary navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler d-lg-none bg-primary navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
          </button>
-         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
- <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          Usuarios
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="usuarios/index.html">Listar</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="usuarios/index.html">Listar</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          Deportes
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="deportes/crear.html">Crear nuevo</a>
-          <a class="dropdown-item" href="deportes/index.html">Listar</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="deportes/crear.html">Crear nuevo</a>
+              <a class="dropdown-item" href="deportes/index.html">Listar</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          Torneos
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="torneos/crear.html">Crear nuevo</a>
-          <a class="dropdown-item" href="torneos/index.html">Listar</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="torneos/crear.html">Crear nuevo</a>
+              <a class="dropdown-item" href="torneos/index.html">Listar</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          Premios
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="premios/crear.html">Crear nuevo</a>
-          <a class="dropdown-item" href="premios/index.html">Listar</a>
-          <a class="dropdown-item" href="premios/ultimos.html">Ultimos movimientos</a>
-        </div>
-      </li>
-            <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="premios/crear.html">Crear nuevo</a>
+              <a class="dropdown-item" href="premios/index.html">Listar</a>
+              <a class="dropdown-item" href="premios/ultimos.html">Ultimos movimientos</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          Equipos
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="equipos/crear.html">Crear nuevo</a>
-          <a class="dropdown-item" href="equipos/index.html">Listar</a>
-        </div>
-      </li>
- </ul>
-    <ul class="nav navbar-nav ml-auto">
-      <li class="nav-item float-right">
-                  <a class="nav-link" href="#">#NombredeAdmin</a>
-               </li>
-    </ul>
-         </div>
-      </nav>
-        <div class="container" style="background-color:gray;">
-      <h2>Home</h2>
-      
-</div>
-      
-      <!-- Aca va el for de eventos -->
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="equipos/crear.html">Crear nuevo</a>
+              <a class="dropdown-item" href="equipos/index.html">Listar</a>
+            </div>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav ml-auto">
+          <li class="nav-item float-right">
+            <a class="nav-link" href="#">#NombredeAdmin</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <ui-view>
+    </ui-view>
+  </div>
+  <script type="text/javascript" src="../../resources/js/angular.bundle.js"></script>
+  <script type="text/javascript" src="../../resources/js/bootstrap.bundle.js"></script>
+  <script type="text/javascript" src="../../resources/js/jquery.bundle.js"></script>
+  <script type="text/javascript" src="../../resources/js/main.js"></script>
+</body>
 
-     
-      <!-- Aca termina el for de eventos -->
-      <!-- Carga mas rapido si esta al final los js -->
-      <script src="../js/jquery.min.js" ></script>
-      <script src="../js/popper.min.js.descarga"></script>
-      <script src="../js/bootstrap.min.js.descarga"></script>
-      <!-- IE10 bug -->
-      <script src="../js/ie10-viewport-bug-workaround.js.descarga"></script>
-   </body>
 </html>
