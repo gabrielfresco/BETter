@@ -76,5 +76,11 @@ export default function (app) {
                 /*controller: 'HomeController',
                 controllerAs: 'homeCtrl'*/
             })
+            .state('apostar', {
+                url: `/apostar`,
+                templateUrl: `${window.BASE_URL}/resources/views/front/apuesta.html`,
+                /*controller: 'HomeController',
+                controllerAs: 'homeCtrl'*/
+            })
     }]);
 }
