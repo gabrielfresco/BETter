@@ -30,49 +30,54 @@
           <li class="nav-item active">
             <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <li class="nav-item dropdown" uib-dropdown dropdown-append-to-body>
+            <a class="nav-link dropdown-toggle" uib-dropdown-toggle href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
          Usuarios
         </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="admin/usuarios/index.html">Listar</a>
+            <div class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" ui-sref="listaUsuarios">Listar</a>
             </div>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <li class="nav-item dropdown" uib-dropdown dropdown-append-to-body>
+            <a class="nav-link dropdown-toggle" uib-dropdown-toggle href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
          Deportes
         </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="admin/deportes/crear.html">Crear nuevo</a>
-              <a class="dropdown-item" href="admin/deportes/index.html">Listar</a>
+            <div class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" ui-sref="crearDeporte">Crear nuevo</a>
+              <a class="dropdown-item" ui-sref="listaDeportes">Listar</a>
             </div>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <li class="nav-item dropdown" uib-dropdown dropdown-append-to-body>
+            <a class="nav-link dropdown-toggle" uib-dropdown-toggle href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
          Torneos
         </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="admin/torneos/crear.html">Crear nuevo</a>
-              <a class="dropdown-item" href="admin/torneos/index.html">Listar</a>
+            <div class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" ui-sref="crearTorneo">Crear nuevo</a>
+              <a class="dropdown-item" ui-sref="listaTorneos">Listar</a>
             </div>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <li class="nav-item dropdown" uib-dropdown dropdown-append-to-body>
+            <a class="nav-link dropdown-toggle" uib-dropdown-toggle href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
          Premios
         </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="admin/premios/crear.html">Crear nuevo</a>
-              <a class="dropdown-item" href="admin/premios/index.html">Listar</a>
-              <a class="dropdown-item" href="admin/premios/ultimos.html">Ultimos movimientos</a>
+            <div class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" ui-sref="crearPremio">Crear nuevo</a>
+              <a class="dropdown-item" ui-sref="listaPremios">Listar</a>
+              <a class="dropdown-item" ui-sref="premiosEntregados">Ultimos movimientos</a>
             </div>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <li class="nav-item dropdown" uib-dropdown dropdown-append-to-body>
+            <a class="nav-link dropdown-toggle" uib-dropdown-toggle href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
          Equipos
         </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="admin/equipos/crear.html">Crear nuevo</a>
-              <a class="dropdown-item" href="admin/equipos/index.html">Listar</a>
+            <div class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" ui-sref="crearEquipo">Crear nuevo</a>
+              <a class="dropdown-item" ui-sref="listaEquipos">Listar</a>
             </div>
           </li>
         </ul>

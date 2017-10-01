@@ -45,11 +45,11 @@ module.exports = {
       context: '.',
       manifest: require(path.resolve(__dirname, '../src/main/webapp/resources/js/angular-manifest.json'))
     }),
-    /*new webpack.DllReferencePlugin({
+    new webpack.DllReferencePlugin({
       context: '.',
       manifest: require(path.resolve(__dirname, '../src/main/webapp/resources/js/jquery-manifest.json'))
     }),
-    new webpack.DllReferencePlugin({
+    /*new webpack.DllReferencePlugin({
       context: '.',
       manifest: require(path.resolve(__dirname, '../src/main/webapp/resources/js/lodash-manifest.json'))
     }),*/
