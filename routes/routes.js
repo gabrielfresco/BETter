@@ -82,5 +82,17 @@ export default function (app) {
                 /*controller: 'HomeController',
                 controllerAs: 'homeCtrl'*/
             })
+            .state('premios', {
+                url: `/premios`,
+                templateUrl: `${window.BASE_URL}/resources/views/front/premios.html`,
+                /*controller: 'HomeController',
+                controllerAs: 'homeCtrl'*/
+            })
+            .state('ranking', {
+                url: `/ranking`,
+                templateUrl: `${window.BASE_URL}/resources/views/front/ranking.html`,
+                /*controller: 'HomeController',
+                controllerAs: 'homeCtrl'*/
+            })
     }]);
 }
