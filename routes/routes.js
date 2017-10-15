@@ -4,6 +4,12 @@ export default function (app) {
     // configure our routes
     app.config(['$stateProvider', function ($stateProvider) {
         $stateProvider
+            .state('register', {
+                url: `/register`,
+                templateUrl: `${window.BASE_URL}/resources/views/front/registro.html`,
+                /*controller: 'HomeController',
+                controllerAs: 'homeCtrl'*/
+            })
             .state('home', {
                 url: `/home`,
                 templateUrl: `${window.BASE_URL}/resources/views/front/eventos.html`,
