@@ -2,8 +2,20 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const deporteSchema = new Schema({
-  nombre:  String,
-  descripcion: String,
+  nombre: {
+    type: String,
+    required: true,
+  },
+  descripcion: {
+    type: String,
+    required: true,
+  },
+  estado: {
+    type: String,
+    required: true,
+    default: 'activo'
+  },
+  torneos: [Schema.ObjectId],
 });
 
 
