@@ -9,7 +9,6 @@ const equipoSchema = new Schema({
     },
     estado: {
         type: String,
-        required: true,
         default: 'activo'
     },
     imagen: {
