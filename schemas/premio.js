@@ -18,9 +18,14 @@ const PremioSchema = new mongoose.Schema({
         unique: true,
         required: true,
     },
+    estado: {
+        type: String,
+        unique: true,
+        default: 'activo',
+    },
 });
 
 var premio = this;
 
-const Premio = conn.model('Premio', UserSchema);
+const Premio = conn.model('Premio', PremioSchema);
 module.exports = Premio;
