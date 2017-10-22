@@ -41,4 +41,26 @@ router.get(baseUrl + 'getAll', function (req, res) {
     });
 })
 
+//Modificar
+router.post(baseUrl + 'modificar' , function (req, res){
+    
+    if(!req.body)
+    {
+        res.send("Faltan Parametros");
+    }
+    let deporteJSON = JSON.parse(req.body.deporte);
+    
+    Deporte.update({ _id: deporteJSON._id}, { $set: deporteJSON}, function(err,deporte)
+    {
+        console.log("llego aca");
+        if(err){
+            let error = new Error("Error al actualizar el deporte");
+            error.status = 401;
+            return res.send(error);
+        }
+        console.log("Actualiza el deporte", deporte);
+        res.send(deporte);
+    });
+});
+
 module.exports = router;
