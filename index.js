@@ -8,6 +8,7 @@ const cors = require('cors');
 const session = require('express-session');
 const apiUsers = require('./api/users');
 const apiDeportes = require('./api/deportes');
+const apiTorneos = require('./api/torneos');
 
 app.use(bodyParser.urlencoded({ extended: true }))
 
@@ -24,6 +25,7 @@ app.use('/', express.static("./src/main/webapp/"));
 
 app.use(apiUsers);
 app.use(apiDeportes);
+app.use(apiTorneos);
 
 app.get('/admin/*', function (req, res) {
     res.sendFile(__dirname + '/src/main/webapp/resources/views/admin/index.html');

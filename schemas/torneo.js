@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const conn = mongoose.createConnection('mongodb://localhost/better');
 
 const torneoSchema = new Schema({
     nombre: {
@@ -8,7 +9,6 @@ const torneoSchema = new Schema({
     },
     estado: {
         type: String,
-        required: true,
         default: 'activo'
     },
     cantJugadores: {
@@ -27,6 +27,6 @@ const torneoSchema = new Schema({
 });
 
 
-const Torneo = mongoose.model('Torneo', torneoSchema);
+const Torneo = conn.model('Torneo', torneoSchema);
 
 module.exports = Torneo;
