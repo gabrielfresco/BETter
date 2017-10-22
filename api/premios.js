@@ -51,7 +51,6 @@ router.post(baseUrl + 'modificar' , function (req, res){
     
     Premio.update({ _id: premioJSON._id}, { $set: premioJSON}, function(err,premio)
     {
-        console.log("llego aca");
         if(err){
             let error = new Error("Error al actualizar el premio");
             error.status = 401;

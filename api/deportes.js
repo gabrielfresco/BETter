@@ -28,6 +28,20 @@ router.post(baseUrl + 'alta', function (req, res) {
     })
 });
 
+//Baja logica
+router.post(baseUrl + 'baja', function (req, res) {
+    if (!req.body.id)
+        res.send("Falta parametros");
+        Deporte.update({ _id: req.body.id }, { $set: { estado: 'inactivo' } }, function (err, premio) {
+        if (err) {
+            let error = new Error("Error al actualizar el Deporte");
+            error.status = 401;
+            return res.send(error);
+        }
+        res.send("Deporte Actualizado");
+    })
+});
+
 router.get(baseUrl + 'getAll', function (req, res) {
     Deporte.find({}, function (err, deportes) {
         if (err) {
