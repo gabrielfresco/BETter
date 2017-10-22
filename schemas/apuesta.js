@@ -18,9 +18,8 @@ const ApuestaSchema = new mongoose.Schema({
     estado: {
         type: String,
         unique: true,
-        required: true,
         trim: true,
-        default: 'Activa'
+        default: 'activo'
     },
     puntosApostados: {
         type: Number,
