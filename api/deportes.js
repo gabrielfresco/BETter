@@ -30,9 +30,11 @@ router.post(baseUrl + 'alta', function (req, res) {
 
 //Baja logica
 router.post(baseUrl + 'baja', function (req, res) {
-    if (!req.body.id)
-        res.send("Falta parametros");
-        Deporte.update({ _id: req.body.id }, { $set: { estado: 'inactivo' } }, function (err, premio) {
+    if (!req.body.id) {
+        return res.send("Falta parametros");
+    }
+
+    Deporte.update({ _id: req.body.id }, { $set: { estado: 'inactivo' } }, function (err, premio) {
         if (err) {
             let error = new Error("Error al actualizar el Deporte");
             error.status = 401;
@@ -47,7 +49,7 @@ router.get(baseUrl + 'getAll', function (req, res) {
         if (err) {
             let error = new Error("Error al lista deportes");
             error.status = 402;
-            res.send(error);
+            return res.send(error);
         }
         console.log("Lista deportes", deportes);
         res.send(deportes);
@@ -56,18 +58,16 @@ router.get(baseUrl + 'getAll', function (req, res) {
 })
 
 //Modificar
-router.post(baseUrl + 'modificar' , function (req, res){
-    
-    if(!req.body)
-    {
+router.post(baseUrl + 'modificar', function (req, res) {
+
+    if (!req.body) {
         res.send("Faltan Parametros");
     }
     let deporteJSON = JSON.parse(req.body.deporte);
-    
-    Deporte.update({ _id: deporteJSON._id}, { $set: deporteJSON}, function(err,deporte)
-    {
+
+    Deporte.update({ _id: deporteJSON._id }, { $set: deporteJSON }, function (err, deporte) {
         console.log("llego aca");
-        if(err){
+        if (err) {
             let error = new Error("Error al actualizar el deporte");
             error.status = 401;
             return res.send(error);

@@ -25,8 +25,8 @@ export default function (app) {
             .state('listaDeportes', {
                 url: `/admin/deportes/lista`,
                 templateUrl: `${window.BASE_URL}/resources/views/admin/deportes/index.html`,
-                /*controller: 'HomeController',
-                controllerAs: 'homeCtrl'*/
+                controller: 'DeporteController',
+                controllerAs: 'deporteCtrl'
             })
             .state('crearDeporte', {
                 url: `/admin/deportes/crear`,

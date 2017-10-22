@@ -3,6 +3,8 @@ import ngRoute from 'angular-ui-router';
 import uiBootstrap from 'angular-ui-bootstrap';
 import localyticsDirectives from 'angular-chosen-localytics';
 import routes from '../routes/routes.js';
+import deporteCtrl from '../js/admin/controllers/deporteController.js'
+import deporteService from '../js/admin/services/deporteService.js'
 
 window.BASE_URL = "http://localhost:3000";
 
@@ -10,9 +12,8 @@ export const app = angular.module('app', ['ui.router', 'localytics.directives', 
 
 routes(app);
 
-app.controller('GlobalController', ['$rootScope', function ($rootScope) {
-  // And your CONFIG vars in .constant will be passed to the HTML doc with this:
-}]);
+deporteCtrl(app);
+deporteService(app);
 
 app.config(function ($urlRouterProvider, $locationProvider) {
   $urlRouterProvider.otherwise('/home');

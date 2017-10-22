@@ -1,77 +1,27 @@
-<!DOCTYPE html>
-<html lang="en" data-livestyle-extension="available">
-
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="icon" href="https://getbootstrap.com/favicon.ico">
-</head>
-
-<body id="login-adm-page">
-  <!-- Aca comienza el content -->
-  <div class="container" style="background-color:gray;">
-    <h2>Lista de deportes</h2>
-    <table class="table table-striped table-inverse">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Deporte</th>
-          <th>Torneos Asociados</th>
-          <th>Estado</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Futbol</td>
-          <td>
-            <ul>
-              <li>Liga Argentina</li>
-              <li>Liga Española</li>
-            </ul>
-          </td>
-          <td>Activo</td>
-          <td><button type="button" class="btn btn-info">Modificar</button> <button type="button" class="btn btn-warning">Deshabilitar</button>            <button type="button" class="btn btn-danger">Eliminar</button></td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Tenis</td>
-          <td>
-            <ul>
-              <li>Us-Open</li>
-            </ul>
-          </td>
-          <td>Activo</td>
-          <td><button type="button" class="btn btn-info">Modificar</button> <button type="button" class="btn btn-warning">Deshabilitar</button>            <button type="button" class="btn btn-danger">Eliminar</button></td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Hockey</td>
-          <td>
-            <ul>
-              <li>-</li>
-            </ul>
-          </td>
-          <td>Inactivo</td>
-          <td><button type="button" class="btn btn-info">Modificar</button> <button type="button" class="btn btn-warning">Deshabilitar</button>            <button type="button" class="btn btn-danger">Eliminar</button></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- Aca va el for de eventos -->
-
-
-  <!-- Aca termina el for de eventos -->
-  <!-- Carga mas rapido si esta al final los js -->
-  <script src="../../js/jquery.min.js"></script>
-  <script src="../../js/popper.min.js.descarga"></script>
-  <script src="../../js/bootstrap.min.js.descarga"></script>
-  <!-- IE10 bug -->
-  <script src="../../js/ie10-viewport-bug-workaround.js.descarga"></script>
-</body>
-
-</html>
+<div class="container" style="background-color:gray;">
+  <h2>Lista de deportes</h2>
+  <table class="table table-striped table-inverse">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Deporte</th>
+        <th>Torneos Asociados</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="deporte in deporteCtrl.deportes">
+        <th scope="row">1</th>
+        <td>{{deporte.nombre}}</td>
+        <td>
+          <ul>
+            <li ng-repeat="torneo in deporte.torneos">{{torneo.nombre}}</li>
+          </ul>
+        </td>
+        <td>{{deporte.estado}}</td>
+        <td><button type="button" class="btn btn-info">Modificar</button> <button type="button" class="btn btn-warning" ng-click="deporteCtrl.eliminar(deporte._id)">Deshabilitar</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

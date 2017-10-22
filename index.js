@@ -15,6 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 Mongoose.createConnection('mongodb://localhost:27017/better', { config: { autoIndex: false } });
 
+app.use(bodyParser.json());
 app.use(cors());
 app.use(compression());
 app.use(session({
