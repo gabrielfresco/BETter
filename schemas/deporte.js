@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const conn = mongoose.createConnection('mongodb://localhost/better'); 
 
 const deporteSchema = new Schema({
   nombre: {
@@ -8,7 +9,7 @@ const deporteSchema = new Schema({
   },
   descripcion: {
     type: String,
-    required: true,
+    required: false,
   },
   estado: {
     type: String,
@@ -19,6 +20,6 @@ const deporteSchema = new Schema({
 });
 
 
-const Deporte = mongoose.model('Deporte', deporteSchema);
+const Deporte = conn.model('Deporte', deporteSchema);
 
 module.exports = Deporte;
