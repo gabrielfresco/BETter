@@ -1,16 +1,16 @@
 # BETter
 
-** Comandos: **
+* Comandos: 
 
-* Back-end NodeJS *
+## Back-end NodeJS *
 
 - npm run dev
 
 
-* Front-end - AngularJS *
+## Front-end - AngularJS *
 
 - 
 
-* Server - Mongo *
+## Server - Mongo *
 
 - mongod
