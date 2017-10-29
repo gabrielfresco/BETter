@@ -6,7 +6,7 @@ import routes from '../routes/routes.js';
 import deporteCtrl from '../js/admin/controllers/deporteController.js'
 import deporteService from '../js/admin/services/deporteService.js'
 
-window.BASE_URL = "http://localhost:3001";
+window.BASE_URL = "http://localhost:3000";
 
 export const app = angular.module('app', ['ui.router', 'localytics.directives', uiBootstrap]);
 

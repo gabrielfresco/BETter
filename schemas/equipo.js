@@ -18,6 +18,6 @@ const equipoSchema = new Schema({
 });
 
 
-const Equipo = conn.model('Equipo', deporteSchema);
+const Equipo = conn.model('Equipo', equipoSchema);
 
 module.exports = Equipo;

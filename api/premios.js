@@ -4,75 +4,74 @@ const Premio = require('../schemas/premio');
 const baseUrl = '/api/premio/';
 
 router.post(baseUrl + 'alta', function (req, res) {
-    if (!req.body)
-        res.send("Falta parametros");
+    if (!req.body.premio)
+        return res.send("Falta parametros");
 
-    let premio = {
-        nombre: req.body.nombre,
-        descripcion: req.body.descripcion,
-        valor: req.body.valor,
-        estado: req.body.estado
-    }
+    let premio = JSON.parse(req.body.premio);
 
-//Alta
     Premio.create(premio, function (err, premio) {
         if (err) {
             let error = new Error("Error al guardar el premio");
             error.status = 401;
-            console.log(err);
-            return res.send(error);
+            console.log("ERROR", err);
+            res.send(error);
+        } else {
+            console.log("GUARDADO OK", premio);
+            res.send("ok")
         }
-        res.send("Premio guardado");
+
     })
 });
 
-//Baja logica del estado
+//Baja logica
 router.post(baseUrl + 'baja', function (req, res) {
-    if (!req.body.id)
-        res.send("Falta parametros");
-    Premio.update({ _id: req.body.id}, { $set: {estado: 'inactivo'} } , function (err,premio) {
-        if(err) {
-            let error = new Error("Error al dar una baja logica al premio");
-            error.status = 401;
-            return res.send(error);
-        }
-        res.send("Premio Actualizado");
-    })
-});
-
-//Modificar
-router.post(baseUrl + 'modificar' , function (req, res){
-    
-    if(!req.body)
-    {
-        res.send("Faltan Parametros");
+    if (!req.body.id) {
+        return res.send("Falta parametros");
     }
-    let premioJSON = JSON.parse(req.body.premio);
-    
-    Premio.update({ _id: premioJSON._id}, { $set: premioJSON}, function(err,premio)
-    {
-        if(err){
+
+    Premio.update({ _id: req.body.id }, { $set: { estado: 'inactivo' } }, function (err, premio) {
+        if (err) {
             let error = new Error("Error al actualizar el premio");
             error.status = 401;
-            return res.send(error);
+            res.send(error);
+        } else {
+            res.send("premio Actualizado");
         }
-        console.log("Actualiza el premio", premio);
-        res.send(premio);
-    });
+    })
 });
 
-//Listar
 router.get(baseUrl + 'getAll', function (req, res) {
     Premio.find({}, function (err, premio) {
         if (err) {
-            let error = new Error("Error al lista premios");
+            let error = new Error("Error al lista premio");
             error.status = 402;
-            return res.send(error);
+            res.send(error);
+        } else {
+            console.log("Lista premio", premio);
+            res.send(premio);
         }
-        console.log("Lista premios", premio);
-        res.send(premio);
-
     });
 })
+
+//Modificar
+router.post(baseUrl + 'modificar', function (req, res) {
+
+    if (!req.body)
+        return res.send("Faltan Parametros");
+
+    let premioJSON = JSON.parse(req.body.premio);
+
+    Premio.update({ _id: premioJSON._id }, { $set: premioJSON }, function (err, premio) {
+        console.log("llego aca");
+        if (err) {
+            let error = new Error("Error al actualizar el premio");
+            error.status = 401;
+            res.send(error);
+        } else {
+            console.log("Actualiza el premio", premio);
+            res.send(premio);
+        }
+    });
+});
 
 module.exports = router;
