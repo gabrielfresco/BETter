@@ -8,6 +8,7 @@ const cors = require('cors');
 const session = require('express-session');
 const apiUsers = require('./api/users');
 const apiDeportes = require('./api/deportes');
+const apiEquipos = require('./api/equipos');
 const apiTorneos = require('./api/torneos');
 const apiPremios = require('./api/premios');
 
@@ -27,6 +28,7 @@ app.use('/', express.static("./src/main/webapp/"));
 
 app.use(apiUsers);
 app.use(apiDeportes);
+app.use(apiEquipos);
 app.use(apiTorneos);
 app.use(apiPremios);
 
@@ -40,6 +42,6 @@ app.get('*', function (req, res) {
 
 
 
-app.listen(3001, () => {
-    console.log('listening on 3001')
+app.listen(3000, () => {
+    console.log('listening on 3000')
 })

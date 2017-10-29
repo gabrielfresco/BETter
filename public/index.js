@@ -11,7 +11,7 @@ import torneoService from '../js/services/torneoService.js'
 import premioCtrl from '../js/admin/controllers/premioController.js'
 import premioService from '../js/services/premioService.js'
 
-window.BASE_URL = "http://localhost:3001";
+window.BASE_URL = "http://localhost:3000";
 
 export const app = angular.module('app', ['ui.router', 'ui-notification', 'localytics.directives', uiBootstrap]);
 

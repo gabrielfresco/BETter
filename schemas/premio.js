@@ -11,16 +11,13 @@ const PremioSchema = new mongoose.Schema({
     },
     descripcion: {
         type: String,
-        unique: true,
     },
     valor: {
         type: Number,
-        unique: true,
         required: true,
     },
     estado: {
         type: String,
-        unique: true,
         default: 'activo',
     },
 });
