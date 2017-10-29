@@ -7,7 +7,7 @@ router.post(baseUrl + 'alta', function (req, res) {
     if (!req.body.premio)
         return res.send("Falta parametros");
 
-    let premio = JSON.parse(req.body.premio);
+    let premio = req.body.premio;
 
     Premio.create(premio, function (err, premio) {
         if (err) {
@@ -20,23 +20,6 @@ router.post(baseUrl + 'alta', function (req, res) {
             res.send("ok")
         }
 
-    })
-});
-
-//Baja logica
-router.post(baseUrl + 'baja', function (req, res) {
-    if (!req.body.id) {
-        return res.send("Falta parametros");
-    }
-
-    Premio.update({ _id: req.body.id }, { $set: { estado: 'inactivo' } }, function (err, premio) {
-        if (err) {
-            let error = new Error("Error al actualizar el premio");
-            error.status = 401;
-            res.send(error);
-        } else {
-            res.send("premio Actualizado");
-        }
     })
 });
 
@@ -56,10 +39,10 @@ router.get(baseUrl + 'getAll', function (req, res) {
 //Modificar
 router.post(baseUrl + 'modificar', function (req, res) {
 
-    if (!req.body)
+    if (!req.body.premio)
         return res.send("Faltan Parametros");
 
-    let premioJSON = JSON.parse(req.body.premio);
+    let premioJSON = req.body.premio;
 
     Premio.update({ _id: premioJSON._id }, { $set: premioJSON }, function (err, premio) {
         console.log("llego aca");

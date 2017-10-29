@@ -10,6 +10,8 @@ import torneoCtrl from '../js/admin/controllers/torneoController.js'
 import torneoService from '../js/services/torneoService.js'
 import premioCtrl from '../js/admin/controllers/premioController.js'
 import premioService from '../js/services/premioService.js'
+import equipoCtrl from '../js/admin/controllers/equipoController.js'
+import equipoService from '../js/services/equipoService.js'
 
 window.BASE_URL = "http://localhost:3000";
 
@@ -23,6 +25,8 @@ torneoCtrl(app);
 torneoService(app);
 premioCtrl(app);
 premioService(app);
+equipoCtrl(app);
+equipoService(app);
 
 app.config(function ($urlRouterProvider, $locationProvider) {
   $urlRouterProvider.otherwise('/home');

@@ -21,22 +21,6 @@ router.post(baseUrl + 'alta', function (req, res) {
     })
 });
 
-//Baja logica
-router.post(baseUrl + 'baja', function (req, res) {
-    if (!req.body.id) {
-        return res.send("Falta parametros");
-    }
-
-    Deporte.update({ _id: req.body.id }, { $set: { estado: 'inactivo' } }, function (err, premio) {
-        if (err) {
-            let error = new Error("Error al actualizar el Deporte");
-            error.status = 401;
-            return res.send(error);
-        }
-        res.send("Deporte Actualizado");
-    })
-});
-
 router.get(baseUrl + 'getAll', function (req, res) {
     Deporte.find({}, function (err, deportes) {
         if (err) {
@@ -56,7 +40,8 @@ router.post(baseUrl + 'modificar', function (req, res) {
     if (!req.body) {
         res.send("Faltan Parametros");
     }
-    let deporteJSON = JSON.parse(req.body.deporte);
+    
+    let deporteJSON = req.body.deporte;
 
     Deporte.update({ _id: deporteJSON._id }, { $set: deporteJSON }, function (err, deporte) {
         console.log("llego aca");

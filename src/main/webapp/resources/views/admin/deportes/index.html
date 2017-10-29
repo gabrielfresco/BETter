@@ -20,7 +20,11 @@
           </ul>
         </td>
         <td>{{deporte.estado}}</td>
-        <td><button type="button" class="btn btn-info">Modificar</button> <button type="button" class="btn btn-warning" ng-click="deporteCtrl.eliminar(deporte._id)">Deshabilitar</button></td>
+        <td><button type="button" class="btn btn-info">Modificar</button> <button type="button" class="btn btn-warning" ng-click="deporteCtrl.cambiarEstado(deporte)">
+          <span ng-if="deporte.estado == 'activo'">Deshabilitar</span>
+          <span ng-if="deporte.estado == 'inactivo'">Habilitar</span>
+        </button>
+      </td>
       </tr>
     </tbody>
   </table>

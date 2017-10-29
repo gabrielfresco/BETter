@@ -7,8 +7,7 @@ router.post(baseUrl + 'alta', function (req, res) {
     if (!req.body.equipo)
         return res.send("Falta parametros");
 
-
-    let equipo = JSON.parse(req.body.equipo);
+    let equipo = req.body.equipo;
 
     Equipo.create(equipo, function (err, equipo) {
         if (err) {
@@ -21,24 +20,6 @@ router.post(baseUrl + 'alta', function (req, res) {
             res.send("ok");
         }
 
-    })
-});
-
-
-//Baja logica
-router.post(baseUrl + 'baja', function (req, res) {
-    if (!req.body.id) {
-        return res.send("Falta parametros");
-    }
-
-    Equipo.update({ _id: req.body.id }, { $set: { estado: 'inactivo' } }, function (err, equipo) {
-        if (err) {
-            let error = new Error("Error al actualizar el Equipo");
-            error.status = 401;
-            res.send(error);
-        } else {
-            res.send("Equipo Actualizado");
-        }
     })
 });
 
@@ -58,10 +39,10 @@ router.get(baseUrl + 'getAll', function (req, res) {
 //Modificar
 router.post(baseUrl + 'modificar', function (req, res) {
 
-    if (!req.body) {
+    if (!req.body.equipo) {
         res.send("Faltan Parametros");
     }
-    let equipoJSON = JSON.parse(req.body.equipo);
+    let equipoJSON = req.body.equipo;
 
     Equipo.update({ _id: equipoJSON._id }, { $set: equipoJSON }, function (err, equipo) {
         console.log("llego aca");

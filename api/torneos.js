@@ -4,16 +4,10 @@ const Torneo = require('../schemas/torneo');
 const baseUrl = '/api/torneo/';
 
 router.post(baseUrl + 'alta', function (req, res) {
-    if (!req.body)
+    if (!req.body.torneo)
         res.send("Falta parametros");
 
-    let torneo = {
-        nombre: req.body.nombre,
-        cantJugadores: req.body.cantJugadores,
-        fechaInicio: req.body.fechaInicio,
-        fechaFin: req.body.fechaFin,
-        equipos: JSON.parse(req.body.equipos)
-    }
+    let torneo = req.body.torneo;
 
     Torneo.create(torneo, function (err, torneo) {
         if (err) {
@@ -28,28 +22,13 @@ router.post(baseUrl + 'alta', function (req, res) {
     })
 });
 
-//Baja logica
-router.post(baseUrl + 'baja', function (req, res) {
-    if (!req.body.id)
-        res.send("Falta parametros");
-    Torneo.update({ _id: req.body.id }, { $set: { estado: 'inactivo' } }, function (err, premio) {
-        if (err) {
-            let error = new Error("Error al actualizar el Torneo");
-            error.status = 401;
-            return res.send(error);
-        }
-        res.send("Torneo Actualizado");
-    })
-});
-
-
 //Modificar
 router.post(baseUrl + 'modificar', function (req, res) {
 
-    if (!req.body) {
-        res.send("Faltan Parametros");
+    if (!req.body.torneo) {
+        return res.send("Faltan Parametros");
     }
-    let torneoJSON = JSON.parse(req.body.torneo);
+    let torneoJSON = req.body.torneo;
 
     Torneo.update({ _id: torneoJSON._id }, { $set: torneoJSON }, function (err, torneo) {
         if (err) {

@@ -2,35 +2,35 @@
 
 var getUrl = window.location.origin;
 var BASE_URL = getUrl;//getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
-const API_BASE_URL = BASE_URL + "/api/deporte";
+const API_BASE_URL = BASE_URL + "/api/premio";
 
 export default function (app) {
-    app.factory('DeporteService', ['$http', '$q', function ($http, $q) {
+    app.factory('PremioService', ['$http', '$q', function ($http, $q) {
 
         var factory = {
-            getDeportes: getDeportes,
-            eliminar: eliminar,
-            saveDeporte: saveDeporte,
+            getPremios: getPremios,
+            modificar: modificar,
+            savePremio: savePremio,
         };
 
         return factory;
 
-        function getDeportes() {
+        function getPremios() {
             return $http({
                 method: 'GET',
                 url: API_BASE_URL + '/getAll'
             });
         }
 
-        function eliminar(data) {
+        function modificar(data) {
             return $http({
                 method: 'POST',
-                url: API_BASE_URL + '/baja',
+                url: API_BASE_URL + '/modificar',
                 data: data
             });
         }
 
-        function saveDeporte(data) {
+        function savePremio(data) {
             return $http({
                 method: 'POST',
                 url: API_BASE_URL + '/alta',

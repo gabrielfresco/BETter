@@ -1,66 +1,66 @@
 'use strict';
 
 export default function(app) {
-	app.controller('DeporteController', ['$scope', '$timeout', '$q', 'DeporteService', 'Notification',     
-	    function ($scope, $timeout, $q, DeporteService, Notification) {
+	app.controller('PremioController', ['$scope', '$timeout', '$q', 'PremioService', 'Notification',     
+	    function ($scope, $timeout, $q, PremioService, Notification) {
 		
 		const self = this;
         
-        this.deporte = {};
-        this.deportes;
+        this.premio = {};
+        this.premios;
 
-        this.cambiarEstado = (deporte) => {
+        this.cambiarEstado = (premio) => {
             let estado = 'activo';
 
-            if(deporte.estado == 'activo')
+            if(premio.estado == 'activo')
                 estado = 'inactivo'
 
-            deporte.estado = estado; 
-
-            let params = { deporte : deporte }
-
-            DeporteService.modificar(params)
+            premio.estado = estado
+            
+            let params = { premio : premio }
+            
+            PremioService.modificar(params)
             .then(
                 function(d) {
                     Notification.success('Actualizado correctamente')
-                    getDeportes();
+                    getPremios();
                 },
                 function(errResponse){
                 	Notification.error('Se produjo un error')
-                    console.error('Error recuperando deportes');
+                    console.error('Error actulizando el estado');
                 }
             );
         }
 
         this.save = () => {
-            let params = { deporte: self.deporte }
+            let params = { premio: self.premio }
 
-            DeporteService.saveDeporte(params)
+            PremioService.savePremio(params)
             .then(
                 function(d) {
                     Notification.success('Guardado correctamente')
-                    getDeportes();
+                    getPremios();
                 },
                 function(errResponse){
                 	Notification.error('Se produjo un error')
-                    console.error('Error recuperando deportes');
+                    console.error('Error recuperando premios');
                 }
             );
         }
 
-		function getDeportes() {
-			DeporteService.getDeportes()
+		function getPremios() {
+			PremioService.getPremios()
             .then(
                 function(d) {
-                	self.deportes = d.data;
+                	self.premios = d.data;
                 },
                 function(errResponse){
                 	Notification.error('Se produjo un error al mostrar el listado')
-                    console.error('Error recuperando deportes');
+                    console.error('Error recuperando premios');
                 }
             );
 		}
         
-        getDeportes();
+        getPremios();
 	}]);
 }
