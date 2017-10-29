@@ -11,8 +11,8 @@ export default function (app) {
             .state('home', {
                 url: `/home`,
                 templateUrl: `${window.BASE_URL}/resources/views/front/eventos.html`,
-                /*controller: 'HomeController',
-                controllerAs: 'homeCtrl'*/
+                controller: 'EventoController',
+                controllerAs: 'eventoCtrl'
             })
             .state('admin', {
                 url: `/admin/login`,

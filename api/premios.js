@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Premio = require('../schemas/premio');
 const baseUrl = '/api/premio/';
+
 let premioJSON;
 
 router.post(baseUrl + 'alta', function (req, res) {
@@ -9,13 +10,7 @@ router.post(baseUrl + 'alta', function (req, res) {
         return res.send("Falta parametros");
     premioJSON = JSON.parse(req.body.premio);
 
-<<<<<<< HEAD
-    let premio = req.body.premio;
-
-    Premio.create(premio, function (err, premio) {
-=======
     Premio.create(premioJSON, function (err, premio) {
->>>>>>> a95f044d2524deaa366a0bd448b9f31739947be8
         if (err) {
             let error = new Error("Error al guardar el premio");
             error.status = 401;
