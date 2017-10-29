@@ -39,7 +39,7 @@ router.get(baseUrl + 'getAll', function (req, res) {
 //Modificar
 router.post(baseUrl + 'modificar', function (req, res) {
 
-    if (!req.body) {
+    if (!req.body.deporte) {
         res.send("Faltan Parametros");
     }
     

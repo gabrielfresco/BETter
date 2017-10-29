@@ -2,40 +2,38 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const conn = mongoose.createConnection('mongodb://localhost/better');
 
-const ApuestaSchema = new mongoose.Schema({
+
+const apuestaSchema = new mongoose.Schema({
     userID: {
         type: Schema.ObjectId,
         required: true
     },
-    torneoID: {
+    eventoID: {
         type: Schema.ObjectId,
         required: true
     },
-    equipoID: {
-        type: Schema.ObjectId,
-        required: true
+    resultadoSeleccionado: {
+        type: String,
+        required: true,
     },
     estado: {
         type: String,
-        unique: true,
         trim: true,
         default: 'activo'
     },
     puntosApostados: {
         type: Number,
-        unique: true,
         required: true,
     },
-    valorApuesta: {
-        type: Number,
-        unique: true,
+    fecha: {
+        type: Date,
         required: true,
-    },
+    }
 });
-
+/*
 var apuesta = this;
 
-ApuestaSchema.methods.cambiarEstado = function (apuesta, callback) {
+apuestaSchema.methods.cambiarEstado = function (apuesta, callback) {
     //Apuesta.findOne({}) 
     Apuesta.update(apuesta, function(err, apuesta) {
         if(err)
@@ -59,6 +57,7 @@ ApuestaSchema.methods.cambiarEstado = function (apuesta, callback) {
         }
     });
 }
+*/
+const Apuesta = conn.model('Apuesta', apuestaSchema);
 
-const Apuesta = conn.model('Apuesta', UserSchema);
 module.exports = Apuesta;
