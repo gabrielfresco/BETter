@@ -24,22 +24,6 @@ router.post(baseUrl + 'alta', function (req, res) {
     })
 });
 
-//Baja logica
-router.post(baseUrl + 'baja', function (req, res) {
-    if (!req.body.id) {
-        return res.send("Falta parametros");
-    }
-
-    Evento.update({ _id: req.body.id }, { $set: { estado: 'inactivo' } }, function (err, premio) {
-        if (err) {
-            let error = new Error("Error al actualizar el Evento");
-            error.status = 401;
-            return res.send(error);
-        }
-        res.send("Evento Actualizado");
-    })
-});
-
 router.get(baseUrl + 'getAll', function (req, res) {
     Evento.find({}, function (err, eventos) {
         if (err) {
@@ -56,7 +40,7 @@ router.get(baseUrl + 'getAll', function (req, res) {
 //Modificar
 router.post(baseUrl + 'modificar', function (req, res) {
 
-    if (!req.body) {
+    if (!req.body.evento) {
         res.send("Faltan Parametros");
     }
 

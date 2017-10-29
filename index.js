@@ -12,6 +12,7 @@ const apiEquipos = require('./api/equipos');
 const apiTorneos = require('./api/torneos');
 const apiPremios = require('./api/premios');
 const apiEventos = require('./api/eventos');
+const apiApuestas = require('./api/apuestas');
 
 app.use(bodyParser.urlencoded({ extended: true }))
 
@@ -33,6 +34,7 @@ app.use(apiEquipos);
 app.use(apiTorneos);
 app.use(apiPremios);
 app.use(apiEventos);
+app.use(apiApuestas);
 
 app.get('/admin/*', function (req, res) {
     res.sendFile(__dirname + '/src/main/webapp/resources/views/admin/index.html');

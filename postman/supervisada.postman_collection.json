@@ -1,0 +1,903 @@
+{
+	"id": "b0c855d9-8a4b-f4db-d3e3-f523297a687d",
+	"name": "supervisada",
+	"description": "",
+	"order": [],
+	"folders": [
+		{
+			"name": "Apuesta",
+			"description": "",
+			"collectionId": "b0c855d9-8a4b-f4db-d3e3-f523297a687d",
+			"order": [
+				"2eb993aa-50de-8ecf-35ea-f95137b39787",
+				"dd91410a-37ef-c213-e830-40c4c30c71e6",
+				"988cc055-9095-764b-d2e3-11f39a44514f"
+			],
+			"owner": "2155339",
+			"folders_order": [],
+			"id": "d55504a6-9c94-0c28-9d48-cf9e185d9288"
+		},
+		{
+			"name": "Deporte",
+			"description": "",
+			"collectionId": "b0c855d9-8a4b-f4db-d3e3-f523297a687d",
+			"order": [
+				"6f6ddbb0-13f0-3db5-1445-4217f21c44a8",
+				"f5404d6e-d650-5ed4-9a12-4dc672ac0258",
+				"dd3ff2fb-0049-11fa-0df3-3cfad5015c57"
+			],
+			"owner": "2155339",
+			"folders_order": [],
+			"id": "23458183-f1e4-9caf-63b1-48ab510ebe54"
+		},
+		{
+			"name": "Equipo",
+			"description": "",
+			"collectionId": "b0c855d9-8a4b-f4db-d3e3-f523297a687d",
+			"order": [
+				"f3e5e1a3-3ec1-4425-8049-395e1e88ab06",
+				"76cfe277-64ee-b30a-3d10-299faff5d21e",
+				"0efb652b-9604-fcc7-5730-1708784f1713"
+			],
+			"owner": "2155339",
+			"folders_order": [],
+			"id": "0f07c429-7709-1bcd-5d98-3cad940be421"
+		},
+		{
+			"name": "Evento",
+			"description": "",
+			"collectionId": "b0c855d9-8a4b-f4db-d3e3-f523297a687d",
+			"order": [
+				"70844266-4201-b1d1-c8e1-f57e5719dde8",
+				"a5b60182-e9e1-cce6-09f8-7b05124f5f2a",
+				"28b55f79-85a3-d22a-6c03-c161ac7d6495"
+			],
+			"owner": "2155339",
+			"folders_order": [],
+			"id": "66c799dc-64f2-8067-6a07-aff452a3d0cf"
+		},
+		{
+			"name": "Premio",
+			"description": "",
+			"collectionId": "b0c855d9-8a4b-f4db-d3e3-f523297a687d",
+			"order": [
+				"b0727165-629a-412a-1eb4-946dc82fc682",
+				"429762d5-26f4-2322-8f27-eab287a8f502",
+				"c72a617b-8a83-890c-c459-a6040a74db9d"
+			],
+			"owner": "2155339",
+			"folders_order": [],
+			"id": "4c6e51fb-aa5b-e7a5-005e-7f90f7c03457"
+		},
+		{
+			"name": "Torneo",
+			"description": "",
+			"collectionId": "b0c855d9-8a4b-f4db-d3e3-f523297a687d",
+			"order": [
+				"a51b0100-2301-cd94-ec82-f3251e2710bf",
+				"d4dbc926-aa5c-d4a7-f796-d01e531452da",
+				"bab068f2-9c97-797c-0e5c-02368a48640d"
+			],
+			"owner": "2155339",
+			"folders_order": [],
+			"id": "16c39a3c-1f4e-bbb5-9e86-1091be2e12fb"
+		}
+	],
+	"folders_order": [
+		"66c799dc-64f2-8067-6a07-aff452a3d0cf",
+		"d55504a6-9c94-0c28-9d48-cf9e185d9288",
+		"23458183-f1e4-9caf-63b1-48ab510ebe54",
+		"16c39a3c-1f4e-bbb5-9e86-1091be2e12fb",
+		"0f07c429-7709-1bcd-5d98-3cad940be421",
+		"4c6e51fb-aa5b-e7a5-005e-7f90f7c03457"
+	],
+	"timestamp": 1508706525721,
+	"owner": "2155339",
+	"public": false,
+	"requests": [
+		{
+			"id": "0efb652b-9604-fcc7-5730-1708784f1713",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:3000/api/equipo/modificar",
+			"folder": "0f07c429-7709-1bcd-5d98-3cad940be421",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "equipo",
+					"value": "    {\n        \"_id\": \"59f62e4261b3f914e4eb2c59\",\n        \"nombre\": \"River Plate\",\n        \"estado\": \"activo\"\n    }",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1509306440999,
+			"name": "Equipo - Modificar",
+			"description": "",
+			"collectionId": "b0c855d9-8a4b-f4db-d3e3-f523297a687d",
+			"responses": []
+		},
+		{
+			"id": "28b55f79-85a3-d22a-6c03-c161ac7d6495",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:3000/api/evento/modificar",
+			"folder": "66c799dc-64f2-8067-6a07-aff452a3d0cf",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "evento",
+					"value": "    {\n        \"_id\": \"59f645a72682712bd07a8c66\",\n        \"resultado1\": {\n            \"idEquipo\": 1234243,\n            \"valorApuesta\": 1.45\n        },\n        \"resultado2\": {\n            \"idEquipo\": 2342432,\n            \"valorApuesta\": 1.33\n        },\n        \"empate\": \"23\",\n        \"torneo\": \"59f63ec85918d4255e6cfb28\",\n        \"fecha\": \"2017-10-29T16:30:30.000Z\",\n        \"estado\": \"inactivo\"\n    }",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1509312151935,
+			"name": "Evento - Modificar",
+			"description": "",
+			"collectionId": "b0c855d9-8a4b-f4db-d3e3-f523297a687d",
+			"responses": []
+		},
+		{
+			"id": "2eb993aa-50de-8ecf-35ea-f95137b39787",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:3000/api/apuesta/getAll",
+			"folder": "d55504a6-9c94-0c28-9d48-cf9e185d9288",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [
+				{
+					"key": "nombre",
+					"value": "fravega",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "descripcion",
+					"value": "computadora blbal",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "valor",
+					"value": "20000",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "estado",
+					"value": "activo",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1509313018864,
+			"name": "Apuesta - Listar",
+			"description": "",
+			"collectionId": "b0c855d9-8a4b-f4db-d3e3-f523297a687d",
+			"responses": []
+		},
+		{
+			"id": "429762d5-26f4-2322-8f27-eab287a8f502",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:3000/api/premio/alta",
+			"folder": "4c6e51fb-aa5b-e7a5-005e-7f90f7c03457",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "premio",
+					"value": "{\n        \"nombre\": \"Compumundo\",\n        \"descripcion\": \"computadora lenovo\",\n        \"valor\": 20000,\n        \"estado\": \"activo\"\n    }",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1509309648394,
+			"name": "Premio - Alta",
+			"description": "",
+			"collectionId": "b0c855d9-8a4b-f4db-d3e3-f523297a687d",
+			"responses": []
+		},
+		{
+			"id": "6f6ddbb0-13f0-3db5-1445-4217f21c44a8",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:3000/api/deporte/getAll",
+			"folder": "23458183-f1e4-9caf-63b1-48ab510ebe54",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [
+				{
+					"key": "nombre",
+					"value": "fravega",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "descripcion",
+					"value": "computadora blbal",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "valor",
+					"value": "20000",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "estado",
+					"value": "activo",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1509306997947,
+			"name": "Deporte - Listar",
+			"description": "",
+			"collectionId": "b0c855d9-8a4b-f4db-d3e3-f523297a687d",
+			"responses": []
+		},
+		{
+			"id": "70844266-4201-b1d1-c8e1-f57e5719dde8",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:3000/api/evento/getAll",
+			"folder": "66c799dc-64f2-8067-6a07-aff452a3d0cf",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [
+				{
+					"key": "nombre",
+					"value": "fravega",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "descripcion",
+					"value": "computadora blbal",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "valor",
+					"value": "20000",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "estado",
+					"value": "activo",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1509311132204,
+			"name": "Evento - Listar",
+			"description": "",
+			"collectionId": "b0c855d9-8a4b-f4db-d3e3-f523297a687d",
+			"responses": []
+		},
+		{
+			"id": "76cfe277-64ee-b30a-3d10-299faff5d21e",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:3000/api/equipo/alta",
+			"folder": "0f07c429-7709-1bcd-5d98-3cad940be421",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "equipo",
+					"value": "{\n \"nombre\": \"River Plate\",\n \"estado\": \"activo\",\n \"imagen\": 213123\n}",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1509310202387,
+			"name": "Equipo - Alta",
+			"description": "",
+			"collectionId": "b0c855d9-8a4b-f4db-d3e3-f523297a687d",
+			"responses": []
+		},
+		{
+			"id": "988cc055-9095-764b-d2e3-11f39a44514f",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:3000/api/apuesta/modificar",
+			"folder": "d55504a6-9c94-0c28-9d48-cf9e185d9288",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "apuesta",
+					"value": "{\n    \"_id\":  \"59f64ee9fba0713342010d1d\",\n    \"userID\": \"59f63ec85918d4255e6cfb28\",\n    \"eventoID\": \"59f63ec85918d4255e6cfb28\",\n    \"resultadoSeleccionado\": \"resultado1\",\n    \"estado\": \"terminada\",\n    \"puntosApostados\": 20200,\n    \"fecha\": \"2017-10-27 16:30:30\"\n}",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1509314604172,
+			"name": "Apuesta - Modificar",
+			"description": "",
+			"collectionId": "b0c855d9-8a4b-f4db-d3e3-f523297a687d",
+			"responses": []
+		},
+		{
+			"id": "a51b0100-2301-cd94-ec82-f3251e2710bf",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:3000/api/torneo/getAll",
+			"folder": "16c39a3c-1f4e-bbb5-9e86-1091be2e12fb",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [
+				{
+					"key": "nombre",
+					"value": "fravega",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "descripcion",
+					"value": "computadora blbal",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "valor",
+					"value": "20000",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "estado",
+					"value": "activo",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1509312197598,
+			"name": "Torneo - Listar",
+			"description": "",
+			"collectionId": "b0c855d9-8a4b-f4db-d3e3-f523297a687d",
+			"responses": []
+		},
+		{
+			"id": "a5b60182-e9e1-cce6-09f8-7b05124f5f2a",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:3000/api/evento/alta",
+			"folder": "66c799dc-64f2-8067-6a07-aff452a3d0cf",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "evento",
+					"value": "{\n\t\"resultado1\": {\n\t\t\"idEquipo\": 1234243,\n\t\t\"valorApuesta\": 1.45\n\t},\n\t\"resultado2\": {\n\t\t\"idEquipo\": 2342432,\n\t\t\"valorApuesta\": 1.33\n\t},\n\t\"empate\": \"23\",\n\t\"torneo\":  \"59f63ec85918d4255e6cfb28\",\n\t\"estado\": \"activo\",\n        \"fecha\": \"2017-10-29 13:30:30\"\n}",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1509312108354,
+			"name": "Evento - Alta",
+			"description": "",
+			"collectionId": "b0c855d9-8a4b-f4db-d3e3-f523297a687d",
+			"responses": []
+		},
+		{
+			"id": "b0727165-629a-412a-1eb4-946dc82fc682",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:3000/api/premio/getAll",
+			"folder": "4c6e51fb-aa5b-e7a5-005e-7f90f7c03457",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [
+				{
+					"key": "nombre",
+					"value": "fravega",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "descripcion",
+					"value": "computadora blbal",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "valor",
+					"value": "20000",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "estado",
+					"value": "activo",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1509307211175,
+			"name": "Premio - Listar",
+			"description": "",
+			"collectionId": "b0c855d9-8a4b-f4db-d3e3-f523297a687d",
+			"responses": []
+		},
+		{
+			"id": "bab068f2-9c97-797c-0e5c-02368a48640d",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:3000/api/torneo/modificar",
+			"folder": "16c39a3c-1f4e-bbb5-9e86-1091be2e12fb",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "torneo",
+					"value": "    {\n        \"_id\": \"59f632dd9fe696192a23152f\",\n        \"nombre\": \"handball\",\n        \"descripcion\": \"deporte de mano\",\n        \"torneos\": [],\n        \"estado\": \"activo\"\n    }",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1509312262383,
+			"name": "Torneo - Modificar",
+			"description": "",
+			"collectionId": "b0c855d9-8a4b-f4db-d3e3-f523297a687d",
+			"responses": []
+		},
+		{
+			"id": "c72a617b-8a83-890c-c459-a6040a74db9d",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:3000/api/premio/modificar",
+			"folder": "4c6e51fb-aa5b-e7a5-005e-7f90f7c03457",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "equipo",
+					"value": "    {\n        \"_id\": \"59f62e4261b3f914e4eb2c59\",\n        \"nombre\": \"River Plate\",\n        \"estado\": \"activo\"\n    }",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1509307229301,
+			"name": "Premio - Modificar",
+			"description": "",
+			"collectionId": "b0c855d9-8a4b-f4db-d3e3-f523297a687d",
+			"responses": []
+		},
+		{
+			"id": "d4dbc926-aa5c-d4a7-f796-d01e531452da",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:3000/api/torneo/alta",
+			"folder": "16c39a3c-1f4e-bbb5-9e86-1091be2e12fb",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "torneo",
+					"value": "{ \"nombre\": \"handball\",\n\"descripcion\": \"deporte de mano\",\n\"torneos\": [],\n\"estado\": \"activo\"\n}\n",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1509312239468,
+			"name": "Torneo - Alta",
+			"description": "",
+			"collectionId": "b0c855d9-8a4b-f4db-d3e3-f523297a687d",
+			"responses": []
+		},
+		{
+			"id": "dd3ff2fb-0049-11fa-0df3-3cfad5015c57",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:3000/api/deporte/modificar",
+			"folder": "23458183-f1e4-9caf-63b1-48ab510ebe54",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "deporte",
+					"value": "    {\n        \"_id\": \"59f632dd9fe696192a23152f\",\n        \"nombre\": \"handball\",\n        \"descripcion\": \"deporte de mano\",\n        \"torneos\": [],\n        \"estado\": \"activo\"\n    }",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1509312097600,
+			"name": "Deporte - Modificar",
+			"description": "",
+			"collectionId": "b0c855d9-8a4b-f4db-d3e3-f523297a687d",
+			"responses": []
+		},
+		{
+			"id": "dd91410a-37ef-c213-e830-40c4c30c71e6",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:3000/api/apuesta/alta",
+			"folder": "d55504a6-9c94-0c28-9d48-cf9e185d9288",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "apuesta",
+					"value": "{\n     \"userID\": \"59f63ec85918d4255e6cfb28\",\n    \"eventoID\": \"59f63ec85918d4255e6cfb28\",\n    \"resultadoSeleccionado\": \"empate\",\n    \"estado\": \"activo\",\n    \"puntosApostados\": 2000,\n    \"fecha\":\"2017-10-27 16:30:30\"\n}",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1509314598775,
+			"name": "Apuesta - Alta",
+			"description": "",
+			"collectionId": "b0c855d9-8a4b-f4db-d3e3-f523297a687d",
+			"responses": []
+		},
+		{
+			"id": "f3e5e1a3-3ec1-4425-8049-395e1e88ab06",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:3000/api/equipo/getAll",
+			"folder": "0f07c429-7709-1bcd-5d98-3cad940be421",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [
+				{
+					"key": "nombre",
+					"value": "fravega",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "descripcion",
+					"value": "computadora blbal",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "valor",
+					"value": "20000",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "estado",
+					"value": "activo",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1509305642584,
+			"name": "Equipo - Listar",
+			"description": "",
+			"collectionId": "b0c855d9-8a4b-f4db-d3e3-f523297a687d",
+			"responses": []
+		},
+		{
+			"id": "f5404d6e-d650-5ed4-9a12-4dc672ac0258",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:3000/api/deporte/alta",
+			"folder": "23458183-f1e4-9caf-63b1-48ab510ebe54",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "deporte",
+					"value": "{ \"nombre\": \"handball\",\n\"descripcion\": \"deporte de mano\",\n\"torneos\": [],\n\"estado\": \"activo\"\n}\n",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1509310219550,
+			"name": "Deporte - Alta",
+			"description": "",
+			"collectionId": "b0c855d9-8a4b-f4db-d3e3-f523297a687d",
+			"responses": []
+		}
+	]
+}
