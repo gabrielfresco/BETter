@@ -2,12 +2,14 @@ const express = require('express');
 const router = express.Router();
 const Deporte = require('../schemas/deporte');
 const baseUrl = '/api/deporte/';
+let deporteJSON;
 
 router.post(baseUrl + 'alta', function (req, res) {
     if (!req.body.deporte)
         res.send("Falta parametros");
+    deporteJSON = JSON.parse(req.body.deporte);
 
-    Deporte.create(req.body.deporte, function (err, deporte) {
+    Deporte.create(deporteJSON, function (err, deporte) {
         if (err) {
             let error = new Error("Error al guardar el deporte");
             error.status = 401;

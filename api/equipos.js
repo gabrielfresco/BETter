@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const Equipo = require('../schemas/equipo');
 const baseUrl = '/api/equipo/';
+let equipoJSON;
+
+//Atributos: nombre, estado, imagen     
 
 router.post(baseUrl + 'alta', function (req, res) {
     if (!req.body.equipo)
@@ -19,7 +22,6 @@ router.post(baseUrl + 'alta', function (req, res) {
             console.log("GUARDADO OK", equipo);
             res.send("ok");
         }
-
     })
 });
 
