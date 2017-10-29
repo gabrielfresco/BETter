@@ -59,3 +59,6 @@ typings/
 
 #map
 ./src/main/webapp/resources/js/main.*
+
+#package
+package-lock.json
