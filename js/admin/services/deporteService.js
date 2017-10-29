@@ -10,6 +10,7 @@ export default function (app) {
         var factory = {
             getDeportes: getDeportes,
             eliminar: eliminar,
+            saveDeporte: saveDeporte,
         };
 
         return factory;
@@ -25,6 +26,14 @@ export default function (app) {
             return $http({
                 method: 'POST',
                 url: API_BASE_URL + '/baja',
+                data: data
+            });
+        }
+
+        function saveDeporte(data) {
+            return $http({
+                method: 'POST',
+                url: API_BASE_URL + '/alta',
                 data: data
             });
         }
