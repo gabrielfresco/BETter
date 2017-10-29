@@ -11,8 +11,8 @@ export default function (app) {
             .state('home', {
                 url: `/home`,
                 templateUrl: `${window.BASE_URL}/resources/views/front/eventos.html`,
-                /*controller: 'HomeController',
-                controllerAs: 'homeCtrl'*/
+                controller: 'EventoController',
+                controllerAs: 'eventoCtrl'
             })
             .state('admin', {
                 url: `/admin/login`,
@@ -91,10 +91,10 @@ export default function (app) {
                 controllerAs: 'homeCtrl'*/
             })
             .state('apostar', {
-                url: `/apostar`,
+                url: `/apostar/{id:string}`,
                 templateUrl: `${window.BASE_URL}/resources/views/front/apuesta.html`,
-                /*controller: 'HomeController',
-                controllerAs: 'homeCtrl'*/
+                controller: 'ApuestaController',
+                controllerAs: 'apuestaCtrl'
             })
             .state('premios', {
                 url: `/premios`,

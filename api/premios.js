@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Premio = require('../schemas/premio');
 const baseUrl = '/api/premio/';
+
 let premioJSON;
 
 router.post(baseUrl + 'alta', function (req, res) {
