@@ -2,15 +2,17 @@ const express = require('express');
 const router = express.Router();
 const Equipo = require('../schemas/equipo');
 const baseUrl = '/api/equipo/';
+let equipoJSON;
+
+//Atributos: nombre, estado, imagen     
 
 router.post(baseUrl + 'alta', function (req, res) {
     if (!req.body.equipo)
         return res.send("Falta parametros");
 
+    equipoJSON = JSON.parse(req.body.equipo);
 
-    let equipo = JSON.parse(req.body.equipo);
-
-    Equipo.create(equipo, function (err, equipo) {
+    Equipo.create(equipoJSON, function (err, equipo) {
         if (err) {
             let error = new Error("Error al guardar el equipo");
             error.status = 401;
@@ -20,7 +22,6 @@ router.post(baseUrl + 'alta', function (req, res) {
             console.log("GUARDADO OK", equipo);
             res.send("ok");
         }
-
     })
 });
 
