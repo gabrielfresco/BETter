@@ -35,6 +35,19 @@ router.get(baseUrl + 'getAll', function (req, res) {
     });
 })
 
+router.get(baseUrl + 'getById', function (req, res) {
+    Apuesta.findOne({ _id : req.params.id }, function (err, apuesta) {
+        if (err) {
+            let error = new Error("Error al buscar apuesta");
+            error.status = 402;
+            res.send(error);
+        } else {
+            console.log("Apuesta", apuesta);
+            res.send(apuestas);
+        }
+    });
+})
+
 //Modificar
 router.post(baseUrl + 'modificar', function (req, res) {
 

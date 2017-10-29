@@ -79,10 +79,10 @@ export default function (app) {
                 controllerAs: 'homeCtrl'*/
             })
             .state('apostar', {
-                url: `/apostar`,
+                url: `/apostar/{id:string}`,
                 templateUrl: `${window.BASE_URL}/resources/views/front/apuesta.html`,
-                /*controller: 'HomeController',
-                controllerAs: 'homeCtrl'*/
+                controller: 'ApuestaController',
+                controllerAs: 'apuestaCtrl'
             })
             .state('premios', {
                 url: `/premios`,

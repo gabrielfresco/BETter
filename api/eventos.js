@@ -7,9 +7,9 @@ let eventoJSON;
 router.post(baseUrl + 'alta', function (req, res) {
     if (!req.body.evento)
         res.send("Falta parametros");
-    eventoJSON = JSON.parse(req.body.evento);
 
-    
+    eventoJSON = req.body.evento;
+
     Evento.create(eventoJSON, function (err, evento) {
         if (err) {
             let error = new Error("Error al guardar el evento");
@@ -44,7 +44,7 @@ router.post(baseUrl + 'modificar', function (req, res) {
         res.send("Faltan Parametros");
     }
 
-    eventoJSON = JSON.parse(req.body.evento);
+    eventoJSON = req.body.evento;
 
     Evento.update({ _id: eventoJSON._id }, { $set: eventoJSON }, function (err, evento) {
         console.log("llego aca");

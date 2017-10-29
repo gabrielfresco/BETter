@@ -14,6 +14,7 @@ import equipoCtrl from '../js/admin/controllers/equipoController.js'
 
 //Controllers front
 import eventoCtrl from '../js/front/controllers/eventoController.js'
+import apuestaCtrl from '../js/front/controllers/apuestaController.js'
 
 //Services
 import equipoService from '../js/services/equipoService.js'
@@ -21,6 +22,7 @@ import deporteService from '../js/services/deporteService.js'
 import premioService from '../js/services/premioService.js'
 import torneoService from '../js/services/torneoService.js'
 import eventoService from '../js/services/eventoService.js'
+import apuestaService from '../js/services/apuestaService.js'
 
 window.BASE_URL = "http://localhost:3000";
 
@@ -38,6 +40,8 @@ equipoCtrl(app);
 equipoService(app);
 eventoCtrl(app);
 eventoService(app);
+apuestaCtrl(app);
+apuestaService(app);
 
 app.config(function ($urlRouterProvider, $locationProvider) {
   $urlRouterProvider.otherwise('/home');
