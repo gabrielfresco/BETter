@@ -101,17 +101,24 @@ var _routes = __webpack_require__(7);
 
 var _routes2 = _interopRequireDefault(_routes);
 
+var _deporteController = __webpack_require__(8);
+
+var _deporteController2 = _interopRequireDefault(_deporteController);
+
+var _deporteService = __webpack_require__(9);
+
+var _deporteService2 = _interopRequireDefault(_deporteService);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-window.BASE_URL = "http://localhost:3000";
+window.BASE_URL = "http://localhost:3001";
 
 var app = exports.app = _angular2.default.module('app', ['ui.router', 'localytics.directives', _angularUiBootstrap2.default]);
 
 (0, _routes2.default)(app);
 
-app.controller('GlobalController', ['$rootScope', function ($rootScope) {
-  // And your CONFIG vars in .constant will be passed to the HTML doc with this:
-}]);
+(0, _deporteController2.default)(app);
+(0, _deporteService2.default)(app);
 
 app.config(function ($urlRouterProvider, $locationProvider) {
   $urlRouterProvider.otherwise('/home');
@@ -7659,7 +7666,12 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = function (app) {
     // configure our routes
     app.config(['$stateProvider', function ($stateProvider) {
-        $stateProvider.state('home', {
+        $stateProvider.state('register', {
+            url: '/register',
+            templateUrl: window.BASE_URL + '/resources/views/front/registro.html'
+            /*controller: 'HomeController',
+            controllerAs: 'homeCtrl'*/
+        }).state('home', {
             url: '/home',
             templateUrl: window.BASE_URL + '/resources/views/front/eventos.html'
             /*controller: 'HomeController',
@@ -7671,9 +7683,9 @@ exports.default = function (app) {
             controllerAs: 'homeCtrl'*/
         }).state('listaDeportes', {
             url: '/admin/deportes/lista',
-            templateUrl: window.BASE_URL + '/resources/views/admin/deportes/index.html'
-            /*controller: 'HomeController',
-            controllerAs: 'homeCtrl'*/
+            templateUrl: window.BASE_URL + '/resources/views/admin/deportes/index.html',
+            controller: 'DeporteController',
+            controllerAs: 'deporteCtrl'
         }).state('crearDeporte', {
             url: '/admin/deportes/crear',
             templateUrl: window.BASE_URL + '/resources/views/admin/deportes/crear.html'
@@ -7737,6 +7749,92 @@ exports.default = function (app) {
         });
     }]);
 };
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+exports.default = function (app) {
+    app.controller('DeporteController', ['$scope', '$timeout', '$q', 'DeporteService', function ($scope, $timeout, $q, DeporteService) {
+
+        var self = this;
+
+        this.deportes;
+
+        this.eliminar = function (id) {
+            var params = {
+                id: id
+            };
+            DeporteService.eliminar(params).then(function (d) {
+                console.log("dado de baja correctamente");
+                getDeportes();
+            }, function (errResponse) {
+                //Notification.error('Se produjo un error intentando recuperar el total de pedidos del día')
+                console.error('Error recuperando deportes');
+            });
+        };
+
+        function getDeportes() {
+            DeporteService.getDeportes().then(function (d) {
+                self.deportes = d.data;
+            }, function (errResponse) {
+                //Notification.error('Se produjo un error intentando recuperar el total de pedidos del día')
+                console.error('Error recuperando deportes');
+            });
+        }
+
+        getDeportes();
+    }]);
+};
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+exports.default = function (app) {
+    app.factory('DeporteService', ['$http', '$q', function ($http, $q) {
+
+        var factory = {
+            getDeportes: getDeportes,
+            eliminar: eliminar
+        };
+
+        return factory;
+
+        function getDeportes() {
+            return $http({
+                method: 'GET',
+                url: API_BASE_URL + '/getAll'
+            });
+        }
+
+        function eliminar(data) {
+            return $http({
+                method: 'POST',
+                url: API_BASE_URL + '/baja',
+                data: data
+            });
+        }
+    }]);
+};
+
+var getUrl = window.location.origin;
+var BASE_URL = getUrl; //getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+var API_BASE_URL = BASE_URL + "/api/deporte";
 
 /***/ })
 /******/ ]);

@@ -8,7 +8,7 @@
 
 ## Front-end - AngularJS
 
-- 
+- npm run build:dev
 
 ## Server - Mongo
 

@@ -16,7 +16,7 @@ export default function(app) {
             .then(
                 function(d) {
                     console.log("dado de baja correctamente")
-                    //getDeportes();
+                    getDeportes();
                 },
                 function(errResponse){
                 	//Notification.error('Se produjo un error intentando recuperar el total de pedidos del día')
