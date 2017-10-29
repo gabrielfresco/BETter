@@ -11,6 +11,7 @@ import torneoService from '../js/services/torneoService.js'
 import premioCtrl from '../js/admin/controllers/premioController.js'
 import premioService from '../js/services/premioService.js'
 import equipoCtrl from '../js/admin/controllers/equipoController.js'
+import eventoCtrlAdmin from '../js/admin/controllers/eventoControllerAdmin.js'
 import equipoService from '../js/services/equipoService.js'
 
 window.BASE_URL = "http://localhost:3000";
@@ -18,6 +19,7 @@ window.BASE_URL = "http://localhost:3000";
 export const app = angular.module('app', ['ui.router', 'ui-notification', 'localytics.directives', uiBootstrap]);
 
 routes(app);
+
 
 deporteCtrl(app);
 deporteService(app);
@@ -27,6 +29,7 @@ premioCtrl(app);
 premioService(app);
 equipoCtrl(app);
 equipoService(app);
+eventoCtrlAdmin(app);
 
 app.config(function ($urlRouterProvider, $locationProvider) {
   $urlRouterProvider.otherwise('/home');
