@@ -11,6 +11,7 @@ export default function (app) {
             getEventos: getEventos,
             modificar: modificar,
             saveEvento: saveEvento,
+            getById: getById,
         };
 
         return factory;
@@ -19,6 +20,15 @@ export default function (app) {
             return $http({
                 method: 'GET',
                 url: API_BASE_URL + '/getAll'
+            });
+        }
+
+        function getById(data) {
+            debugger
+            return $http({
+                method: 'POST',
+                url: API_BASE_URL + '/getById' ,
+                data: data
             });
         }
 

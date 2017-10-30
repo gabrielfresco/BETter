@@ -8,6 +8,7 @@ router.post(baseUrl + 'alta', function (req, res) {
         res.send("Falta parametros");
 
     let torneo = req.body.torneo;
+    //let torneo = JSON.parse(req.body.torneo);
 
     Torneo.create(torneo, function (err, torneo) {
         if (err) {

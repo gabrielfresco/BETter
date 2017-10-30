@@ -11,6 +11,7 @@ router.post(baseUrl + 'alta', function (req, res) {
         return res.send("Falta parametros");
 
     let equipo = req.body.equipo;
+    //let equipo = JSON.parse(req.body.equipo);
 
     Equipo.create(equipo, function (err, equipo) {
         if (err) {
