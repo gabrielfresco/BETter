@@ -99,7 +99,8 @@ router.post(baseUrl + 'modificar', function (req, res) {
         res.send("Faltan Parametros");
     }
 
-    eventoJSON = req.body.evento;
+    //eventoJSON = req.body.evento;
+    eventoJSON = JSON.parse(req.body.evento);
 
     Evento.update({ _id: eventoJSON._id }, { $set: eventoJSON }, function (err, evento) {
         console.log("llego aca");

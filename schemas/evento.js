@@ -33,6 +33,10 @@ const eventoSchema = new Schema({
     type: Schema.ObjectId,
     require: true
   },
+  deporte: {
+    type: Schema.ObjectId,
+    require: true
+  },
   fecha: {
     type: Date,
     required: true

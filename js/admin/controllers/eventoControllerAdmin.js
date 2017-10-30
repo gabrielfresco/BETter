@@ -2,38 +2,19 @@
 
 export default function(app) {
 	app.controller('EventoControllerAdmin', ['$scope', '$timeout', '$q', 'EventoService', 'Notification',     
-	    function ($scope, $timeout, $q, EventoService, Notification) {
+	    function ($scope, $timeout, $q, UrlHelper, EventoService, Notification) {
 		
 		const self = this;
         
-        this.premio = {};
-        this.premios;
+        this.evento = {};
+        this.eventos;
 
-        this.cambiarEstado = (premio) => {
-            let estado = 'activo';
-
-            if(premio.estado == 'activo')
-                estado = 'inactivo'
-
-            premio.estado = estado
-            
-            let params = { premio : premio }
-            
-            EventoService.modificar(params)
-            .then(
-                function(d) {
-                    Notification.success('Actualizado correctamente')
-                    getEventos();
-                },
-                function(errResponse){
-                	Notification.error('Se produjo un error')
-                    console.error('Error actulizando el estado');
-                }
-            );
+        this.modificarEvento = (evento) => {
+            UrlHelper.go('crearEvento', {id: evento._id}, true);
         }
 
         this.save = () => {
-            let params = { premio: self.premio }
+            let params = { evento: self.evento }
 
             EventoService.saveEvento(params)
             .then(
@@ -52,11 +33,11 @@ export default function(app) {
 			EventoService.getEventos()
             .then(
                 function(d) {
-                	self.premios = d.data;
+                	self.eventos = d.data;
                 },
                 function(errResponse){
                 	Notification.error('Se produjo un error al mostrar el listado')
-                    console.error('Error recuperando premios');
+                    console.error('Error recuperando eventos');
                 }
             );
 		}
