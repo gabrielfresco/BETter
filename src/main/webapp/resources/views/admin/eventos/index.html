@@ -5,25 +5,24 @@
       <tr>
         <th>#</th>
         <th>Deporte</th>
-        <th>Torneos Asociados</th>
+        <th>Torneo</th>
+        <th>Rivales</th>
+        <th>Fecha y hora</th>
         <th>Estado</th>
         <th>Acciones</th>
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="deporte in deporteCtrl.eventos">
+        
+      <tr ng-repeat="evento in eventoCtrlAdmin.eventos">
         <th scope="row">1</th>
-        <td>{{deporte.nombre}}</td>
-        <td>
-          <ul>
-            <li ng-repeat="torneo in deporte.torneos">{{torneo.nombre}}</li>
-          </ul>
-        </td>
-        <td>{{deporte.estado}}</td>
-        <td><button type="button" class="btn btn-info">Modificar</button> <button type="button" class="btn btn-warning" ng-click="deporteCtrl.cambiarEstado(deporte)">
-          <span ng-if="deporte.estado == 'activo'">Deshabilitar</span>
-          <span ng-if="deporte.estado == 'inactivo'">Habilitar</span>
-        </button>
+        <td>{{evento.deporte}}</td>
+        <td>{{evento.torneo}}</td>
+        
+        <td>{{evento.resultado1.idEquipo}} VS {{evento.resultado2.idEquipo}}</td>
+        <td>{{evento.fecha}}</td>
+        <td>{{evento.estado}}</td>
+        <td><button type="button" class="btn btn-warning" ng-click="eventoCtrlAdmin.modificarEvento(evento)">Modificar</button>
       </td>
       </tr>
     </tbody>
