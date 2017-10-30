@@ -17,7 +17,7 @@ export default function(app) {
 			EventoService.getById(params)
             .then(
                 function(d) {
-                    self.evento = d.data;
+                    self.evento = d.data[0];
                     console.log(self.evento)
                 },
                 function(errResponse){

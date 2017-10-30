@@ -18,18 +18,18 @@
           <div class="row">
             <div class="col-md border-apuestas text-center">
               <img src="../../resources/assets/images-team/futbol/lanus.png" class="img-fluid-teams-small">
-              <h4 class="text-center">Lanus</h4>
-              <a class="btn btn-primary btn-lg" href="#" role="button">1.21</a>
+              <h4 class="text-center">{{apuestaCtrl.evento.equipo1.nombre}}</h4>
+              <a class="btn btn-primary btn-lg" href="#" role="button">{{apuestaCtrl.evento.valorEquipo1}}</a>
             </div>
             <div class="col-md border-apuestas text-center">
               <img src="../../resources/assets/images-own/empate.png" class="img-fluid-teams-small">
               <h4>Empate</h4>
-              <a class="btn btn-primary btn-lg" href="#" role="button">1.50</a>
+              <a class="btn btn-primary btn-lg" href="#" role="button">{{apuestaCtrl.evento.empate}}</a>
             </div>
             <div class="col-md border-apuestas text-center">
               <img src="../../resources/assets/images-team/futbol/boca.png" class="img-fluid-teams-small">
-              <h4 class="text-center">Boca Junios</h4>
-              <a class="btn btn-primary btn-lg" href="#" role="button">1.80</a>
+              <h4 class="text-center">{{apuestaCtrl.evento.equipo2.nombre}}</h4>
+              <a class="btn btn-primary btn-lg" href="#" role="button">{{apuestaCtrl.evento.valorEquipo2}}</a>
             </div>
           </div>
 
@@ -48,160 +48,11 @@
           </div>
         </form>
         <p class="lead text-center color-white">
-          10/09/2017 15:30
+           {{apuestaCtrl.evento.fecha}}
         </p>
       </div>
     </div>
 
-    <!--
-        <div class="jumbotron">
-           <h3>Futbol</h3>
-           <p class="lead">Liga Argentina</p>
-           <hr class="my-4">
-           <div class="row">
-              <div class="col-md text-center">
-                 <img src="../../resources/assets/images-team/lanus.png" class="img-fluid-teams-small">   
-                 <h4 class="text-center">Lanus</h4> 
-              </div>
-              <div class="col-md text-center">
-                 <div class="vs">
-                    <h1>
-                    VS
-                    <h1>
-                 </div>
-              </div>
-              <div class="col-md text-center">
-                 <img src="../../resources/assets/images-team/boca.png" class="img-fluid-teams-small">  
-                 <h4 class="text-center">Boca Junios</h4> 
-              </div>
-           </div>
-           <p class="lead text-center">
-              <a class="btn btn-primary btn-lg" href="#" role="button">Apostar</a>
-           </p>
-        </div>
-
-
-        </div>
-
-        <div class="col-xs-1">
-        <div class="jumbotron ">
-           <h3>Futbol</h3>
-           <p class="lead">Liga Argentina</p>
-           <hr class="my-4">
-           <div class="row">
-              <div class="col-md text-center">
-                 <img src="../../resources/assets/images-team/river.png" class="img-fluid-teams-small"> 
-                 <h4 class="text-center">River</h4> 
-              </div>
-              <div class="col-md text-center">
-                 <div class="vs">
-                    <h1>
-                    VS
-                    <h1>
-                 </div>
-              </div>
-              <div class="col-md text-center">
-                 <img src="../../resources/assets/images-team/banfield.png" class="img-fluid-teams-small"> 
-                 <h4 class="text-center">Banfield</h4> 
-              </div>
-           </div>
-           <p class="lead text-center">
-              <a class="btn btn-primary btn-lg" href="#" role="button">Apostar</a>
-           </p>
-        </div>
-
-        </div>
-
-        <div class="col-xs-1">
-
-                <div class="jumbotron">
-           <h3>Futbol</h3>
-           <p class="lead">Liga Argentina</p>
-           <hr class="my-4">
-           <div class="row">
-              <div class="col-md text-center">
-                 <img src="../../resources/assets/images-team/rosario.png" class="img-fluid-teams-small"> 
-                 <h4 class="text-center">Rosario Central</h4> 
-              </div>
-              <div class="col-md text-center">
-                 <div class="vs">
-                    <h1>
-                    VS
-                    <h1>
-                 </div>
-              </div>
-              <div class="col-md text-center">
-                 <img src="../../resources/assets/images-team/sanlorenzo.png" class="img-fluid-teams-small">  
-                 <h4 class="text-center">San Lorenzo</h4> 
-              </div>
-           </div>
-           <p class="lead text-center">
-              <a class="btn btn-primary btn-lg" href="#" role="button">Apostar</a>
-           </p>
-        </div>
-
-        </div>
-
-
-         <div class="col-xs-1">
-
-                <div class="jumbotron">
-           <h3>Futbol</h3>
-           <p class="lead">Liga Argentina</p>
-           <hr class="my-4">
-           <div class="row">
-              <div class="col-md text-center">
-                 <img src="../../resources/assets/images-team/tigre.png" class="img-fluid-teams-small"> 
-                 <h4 class="text-center">Tigre</h4> 
-              </div>
-              <div class="col-md text-center">
-                 <div class="vs">
-                    <h1>
-                    VS
-                    <h1>
-                 </div>
-              </div>
-              <div class="col-md text-center">
-                 <img src="../../resources/assets/images-team/chacarita.png" class="img-fluid-teams-small">  
-                 <h4 class="text-center">Chacarita</h4> 
-              </div>
-           </div>
-           <p class="lead text-center">
-              <a class="btn btn-primary btn-lg" href="#" role="button">Apostar</a>
-           </p>
-        </div>
-
-        </div>
-
-
-         <div class="col-xs-1">
-
-                <div class="jumbotron">
-           <h3>Futbol</h3>
-           <p class="lead">Liga Argentina</p>
-           <hr class="my-4">
-           <div class="row">
-              <div class="col-md text-center">
-                 <img src="../../resources/assets/images-team/estudiantes.png" class="img-fluid-teams-small"> 
-                 <h4 class="text-center">Estudiantes de la plata</h4> 
-              </div>
-              <div class="col-md text-center">
-                 <div class="vs">
-                    <h1>
-                    VS
-                    <h1>
-                 </div>
-              </div>
-              <div class="col-md text-center">
-                 <img src="../../resources/assets/images-team/defensa.png" class="img-fluid-teams-small">   
-                 <h4 class="text-center">Defensa y Justicia</h4> 
-              </div>
-           </div>
-           <p class="lead text-center">
-              <a class="btn btn-primary btn-lg margin-top" href="#" role="button">Apostar</a>
-           </p>
-        </div>
- -->
     </div>
 
 
