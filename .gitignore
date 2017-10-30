@@ -58,4 +58,7 @@ typings/
 .env
 
 #map
-./src/main/webapp/resources/js/main.*
+src/main/webapp/resources/js/main.*
+
+#package
+package-lock.json

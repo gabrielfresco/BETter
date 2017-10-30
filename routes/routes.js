@@ -60,6 +60,18 @@ export default function (app) {
                 controller: 'PremioController',
                 controllerAs: 'premioCtrl'
             })
+            .state('listaEventos', {
+                url: `/admin/eventos/lista`,
+                templateUrl: `${window.BASE_URL}/resources/views/admin/eventos/index.html`,
+                controller: 'EventoControllerAdmin',
+                controllerAs: 'eventoCtrlAdmin'
+            })
+            .state('crearEvento', {
+                url: `/admin/eventos/crear`,
+                templateUrl: `${window.BASE_URL}/resources/views/admin/eventos/crear.html`,
+                controller: 'EventoControllerAdmin',
+                controllerAs: 'eventoCtrlAdmin'
+            })
             .state('listaTorneos', {
                 url: `/admin/torneos/lista`,
                 templateUrl: `${window.BASE_URL}/resources/views/admin/torneos/index.html`,

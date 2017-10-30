@@ -11,6 +11,7 @@ import deporteCtrl from '../js/admin/controllers/deporteController.js'
 import torneoCtrl from '../js/admin/controllers/torneoController.js'
 import premioCtrl from '../js/admin/controllers/premioController.js'
 import equipoCtrl from '../js/admin/controllers/equipoController.js'
+import eventoCtrlAdmin from '../js/admin/controllers/eventoControllerAdmin.js'
 
 //Controllers front
 import eventoCtrl from '../js/front/controllers/eventoController.js'
@@ -29,17 +30,26 @@ window.BASE_URL = "http://localhost:3000";
 export const app = angular.module('app', ['ui.router', 'ui-notification', 'localytics.directives', uiBootstrap]);
 
 routes(app);
+
+
 UrlHelper(app);
+
 deporteCtrl(app);
 deporteService(app);
+
 torneoCtrl(app);
 torneoService(app);
+
 premioCtrl(app);
 premioService(app);
+
 equipoCtrl(app);
 equipoService(app);
+
+eventoCtrlAdmin(app);
 eventoCtrl(app);
 eventoService(app);
+
 apuestaCtrl(app);
 apuestaService(app);
 
