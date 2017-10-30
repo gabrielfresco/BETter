@@ -23,11 +23,12 @@ export default function (app) {
             });
         }
 
-        function getById(params) {
+        function getById(data) {
+            debugger
             return $http({
-                method: 'GET',
-                url: API_BASE_URL + '/getById',
-                params: params
+                method: 'POST',
+                url: API_BASE_URL + '/getById' ,
+                data: data
             });
         }
 

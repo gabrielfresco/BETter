@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Evento = require('../schemas/evento');
+const mongoose = require('mongoose');
 const baseUrl = '/api/evento/';
 let eventoJSON;
 
@@ -9,6 +10,7 @@ router.post(baseUrl + 'alta', function (req, res) {
         res.send("Falta parametros");
 
     eventoJSON = req.body.evento;
+    //eventoJSON = JSON.parse(req.body.evento);
 
     Evento.create(eventoJSON, function (err, evento) {
         if (err) {
@@ -36,6 +38,59 @@ router.get(baseUrl + 'getAll', function (req, res) {
 
     });
 })
+
+router.post(baseUrl + 'getById', function (req, res) {
+    Evento.aggregate([{
+        $match: {
+            _id: mongoose.Types.ObjectId(req.body.id)
+        }
+    }, {
+        $lookup: {
+            from: "torneos",
+            localField: "torneo",
+            foreignField: "_id",
+            as: "torneo"
+        }
+    }, {
+        $unwind: {
+            path: "$torneo",
+            preserveNullAndEmptyArrays: true
+        }
+    }, {
+        $lookup: {
+            from: "equipos",
+            localField: "equipo1",
+            foreignField: "_id",
+            as: "equipo1"
+        }
+    }, {
+        $unwind: {
+            path: "$equipo1",
+            preserveNullAndEmptyArrays: true
+        }
+    }, {
+        $lookup: {
+            from: "equipos",
+            localField: "equipo2",
+            foreignField: "_id",
+            as: "equipo2"
+        }
+    }, {
+        $unwind: {
+            path: "$equipo2",
+            preserveNullAndEmptyArrays: true
+        }
+    }], function (err, evento) {
+        if (err) {
+            let error = new Error("Error al buscar evento");
+            error.status = 402;
+            res.send(error);
+        } else {
+            console.log("evento", evento);
+            res.send(evento);
+        }
+    });
+});
 
 //Modificar
 router.post(baseUrl + 'modificar', function (req, res) {
