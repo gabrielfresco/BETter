@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 const conn = mongoose.createConnection('mongodb://localhost/better'); 
 
 const eventoSchema = new Schema({
-  //IdEquipo + valorApuesta
+  //idEquipo + valorApuesta
   resultado1: { 
     type: Object,
     required: true
@@ -22,6 +22,10 @@ const eventoSchema = new Schema({
     default: 'activo'
   },
   torneo: {
+    type: Schema.ObjectId,
+    require: true
+  },
+  deporte: {
     type: Schema.ObjectId,
     require: true
   },

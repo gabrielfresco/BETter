@@ -8,7 +8,8 @@ router.post(baseUrl + 'alta', function (req, res) {
     if (!req.body.evento)
         res.send("Falta parametros");
 
-    eventoJSON = req.body.evento;
+    //eventoJSON = req.body.evento;
+    eventoJSON = JSON.parse(req.body.evento);
 
     Evento.create(eventoJSON, function (err, evento) {
         if (err) {
@@ -44,7 +45,8 @@ router.post(baseUrl + 'modificar', function (req, res) {
         res.send("Faltan Parametros");
     }
 
-    eventoJSON = req.body.evento;
+    //eventoJSON = req.body.evento;
+    eventoJSON = JSON.parse(req.body.evento);
 
     Evento.update({ _id: eventoJSON._id }, { $set: eventoJSON }, function (err, evento) {
         console.log("llego aca");
