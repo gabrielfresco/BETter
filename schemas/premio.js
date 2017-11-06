@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const conn = mongoose.createConnection('mongodb://localhost/better');
 
-const PremioSchema = new mongoose.Schema({
+const PremioSchema = new Schema({
     nombre: {
         type: String,
         unique: true,
@@ -16,13 +16,14 @@ const PremioSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
+    imagen: {
+        type: String,
+    },
     estado: {
         type: String,
         default: 'activo',
     },
 });
-
-var premio = this;
 
 const Premio = conn.model('Premio', PremioSchema);
 module.exports = Premio;
