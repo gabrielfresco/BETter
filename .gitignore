@@ -62,3 +62,7 @@ src/main/webapp/resources/js/main.*
 
 #package
 package-lock.json
+
+#ignorar:
+./src/main/webapp/resources/js/main.js.map
+./package-lock.json
