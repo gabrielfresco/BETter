@@ -33,7 +33,10 @@ export default function(app) {
         }
 
         this.save = () => {
+            console.log(self);
+            
             let params = { premio: self.premio }
+            console.log("Ahora params:", params);
 
             PremioService.savePremio(params)
             .then(
@@ -46,6 +49,7 @@ export default function(app) {
                     console.error('Error recuperando premios');
                 }
             );
+            
         }
 
 		function getPremios() {
