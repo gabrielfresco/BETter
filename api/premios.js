@@ -8,7 +8,10 @@ let premioJSON;
 router.post(baseUrl + 'alta', function (req, res) {
     if (!req.body.premio)
         return res.send("Falta parametros");
-    premioJSON = JSON.parse(req.body.premio);
+    //premioJSON = JSON.parse(req.body.premio);
+    premioJSON = req.body.premio;
+
+    console.log("llegaste?");
 
     Premio.create(premioJSON, function (err, premio) {
         if (err) {
@@ -20,7 +23,6 @@ router.post(baseUrl + 'alta', function (req, res) {
             console.log("GUARDADO OK", premio);
             res.send("ok")
         }
-
     })
 });
 
