@@ -13,7 +13,7 @@
   <!-- Navbar -->
   <!-- Aca comienza el content -->
   <div class="container" style="background-color:gray;">
-    <h2>Lista de equipos</h2>
+    <h2>Lista de premios</h2>
     <table class="table table-striped table-inverse">
       <thead>
         <tr>
@@ -27,43 +27,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>10 USD - Paypal</td>
-          <td>Te enviamos a tu cuenta un total de 10 USD.</td>
-          <td>1.000.000</td>
+        <tr ng-repeat="premio in premioCtrl.premios">
+          <th scope="row">{{$index + 1}}</th>
+          <td>{{premio.nombre}}</td>
+          <td>{{premio.descripcion}}</td>
+          <td>{{premio.valor}}</td>
           <td><img src="../../resources/assets/images-rewards/paypal.png" class="img-fluid-teams-rewards"></td>
-          <td>Activo</td>
+          <td>{{premio.estado}}</td>
           <td><button type="button" class="btn btn-info">Modificar</button> <button type="button" class="btn btn-warning">Deshabilitar</button>            <button type="button" class="btn btn-danger">Eliminar</button></td>
         </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>20 USD - Paypal</td>
-          <td>Te enviamos a tu cuenta un total de 20 USD.</td>
-          <td>2.000.000</td>
-          <td><img src="../../resources/assets/images-rewards/paypal.png" class="img-fluid-teams-rewards"></td>
-          <td>Activo</td>
-          <td><button type="button" class="btn btn-info">Modificar</button> <button type="button" class="btn btn-warning">Deshabilitar</button>            <button type="button" class="btn btn-danger">Eliminar</button></td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Notebook Bangho - CompuMundo</td>
-          <td>Modelo VG3-SDF</td>
-          <td>20.000.000</td>
-          <td><img src="../../resources/assets/images-rewards/compumundo.png" class="img-fluid-teams-rewards"></td>
-          <td>Activo</td>
-          <td><button type="button" class="btn btn-info">Modificar</button> <button type="button" class="btn btn-warning">Deshabilitar</button>            <button type="button" class="btn btn-danger">Eliminar</button></td>
-        </tr>
-        <tr>
-          <th scope="row">4</th>
-          <td>Heladera - Fravega</td>
-          <td>Frost sdf-3434</td>
-          <td>35.000.000</td>
-          <td><img src="../../resources/assets/images-rewards/fravega.png" class="img-fluid-teams-rewards"></td>
-          <td>Activo</td>
-          <td><button type="button" class="btn btn-info">Modificar</button> <button type="button" class="btn btn-warning">Deshabilitar</button>            <button type="button" class="btn btn-danger">Eliminar</button></td>
-        </tr>
-
       </tbody>
     </table>
   </div>
