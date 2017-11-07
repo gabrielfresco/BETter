@@ -26,63 +26,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr ng-repeat="equipo in equipoCtrl.equipos">
           <th scope="row">1</th>
-          <td>Boca Juniors</td>
-          <td>Futbol</td>
-          <td><img src="../../resources/assets/images-team/futbol/boca.png" class="img-fluid-teams-small"> </td>
-          <td>Activo</td>
+          <td>{{equipo.nombre}}</td>
+          <td>{{equipo.deporte}}</td>
+          <td>{{equipo.imagen}}</td>
+          <td>{{equipo.estado}}</td>
           <td><button type="button" class="btn btn-info">Modificar</button> <button type="button" class="btn btn-warning">Deshabilitar</button>            <button type="button" class="btn btn-danger">Eliminar</button></td>
         </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>River Plate</td>
-          <td>Futbol</td>
-          <td><img src="../../resources/assets/images-team/futbol/river.png" class="img-fluid-teams-small"> </td>
-          <td>Activo</td>
-          <td><button type="button" class="btn btn-info">Modificar</button> <button type="button" class="btn btn-warning">Deshabilitar</button>            <button type="button" class="btn btn-danger">Eliminar</button></td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>San Lorenzo</td>
-          <td>Futbol</td>
-          <td><img src="../../resources/assets/images-team/futbol/san-lorenzo.png" class="img-fluid-teams-small"> </td>
-          <td>Activo</td>
-          <td><button type="button" class="btn btn-info">Modificar</button> <button type="button" class="btn btn-warning">Deshabilitar</button>            <button type="button" class="btn btn-danger">Eliminar</button></td>
-        </tr>
-        <tr>
-          <th scope="row">4</th>
-          <td>Banfield</td>
-          <td>Futbol</td>
-          <td><img src="../../resources/assets/images-team/futbol/banfield.png" class="img-fluid-teams-small"> </td>
-          <td>Activo</td>
-          <td><button type="button" class="btn btn-info">Modificar</button> <button type="button" class="btn btn-warning">Deshabilitar</button>            <button type="button" class="btn btn-danger">Eliminar</button></td>
-        </tr>
-        <tr>
-          <th scope="row">5</th>
-          <td>Lanus</td>
-          <td>Futbol</td>
-          <td><img src="../../resources/assets/images-team/futbol/lanus.png" class="img-fluid-teams-small"> </td>
-          <td>Activo</td>
-          <td><button type="button" class="btn btn-info">Modificar</button> <button type="button" class="btn btn-warning">Deshabilitar</button>            <button type="button" class="btn btn-danger">Eliminar</button></td>
-        </tr>
-        <tr>
-          <th scope="row">6</th>
-          <td>Juan Martin Del Potro</td>
-          <td>Tenis</td>
-          <td><img src="../../resources/assets/images-team/tenis/del-potro.png" class="img-fluid-teams-small"> </td>
-          <td>Activo</td>
-          <td><button type="button" class="btn btn-info">Modificar</button> <button type="button" class="btn btn-warning">Deshabilitar</button>            <button type="button" class="btn btn-danger">Eliminar</button></td>
-        </tr>
-        <tr>
-          <th scope="row">7</th>
-          <td>Rafael Nadal</td>
-          <td>Tenis</td>
-          <td><img src="../../resources/assets/images-team/tenis/nadal.png" class="img-fluid-teams-small"> </td>
-          <td>Activo</td>
-          <td><button type="button" class="btn btn-info">Modificar</button> <button type="button" class="btn btn-warning">Deshabilitar</button>            <button type="button" class="btn btn-danger">Eliminar</button></td>
-        </tr>
-
       </tbody>
     </table>
   </div>

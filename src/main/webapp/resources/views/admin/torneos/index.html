@@ -27,40 +27,18 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Liga Argentina</td>
-          <td>Futbol</td>
-          <td>01-01-2018</td>
-          <td>12-01-2018</td>
+        <tr ng-repeat="torneo in torneoCtrl.torneos">
+          <th scope="row">{{$index + 1}}</th>
+          <td>{{torneo.nombre}}</td>
+          <td>{{torneo.deporte}}</td>
+          <td>{{torneo.fechaInicio}}</td>
+          <td>{{torneo.fechaFin}}</td>
           <td>
-            <ul>
-              <li>River Plate</li>
-              <li>Boca Juniors</li>
-              <li>Independiente</li>
-              <li>Banfield</li>
-              <li>Racing</li>
-              <li>Lanus</li>
+            <ul ng-repeat="equipo in torneo.equipos">
+              <li>{{equipo}}</li>
             </ul>
           </td>
-          <td>Activo</td>
-          <td><button type="button" class="btn btn-info">Modificar</button> <button type="button" class="btn btn-warning">Deshabilitar</button>            <button type="button" class="btn btn-danger">Eliminar</button></td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>US-OPEN</td>
-          <td>Tenis</td>
-          <td>04-02-2018</td>
-          <td>24-02-2018</td>
-          <td>
-            <ul>
-              <li>Roger Federer</li>
-              <li>Juan Martin Del Potro</li>
-              <li>Rafael Nadal</li>
-              <li>Kevin Anderson</li>
-            </ul>
-          </td>
-          <td>Activo</td>
+          <td>{{torneo.estado}}</td>
           <td><button type="button" class="btn btn-info">Modificar</button> <button type="button" class="btn btn-warning">Deshabilitar</button>            <button type="button" class="btn btn-danger">Eliminar</button></td>
         </tr>
       </tbody>

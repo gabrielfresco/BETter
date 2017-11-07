@@ -7,13 +7,13 @@ const torneoSchema = new Schema({
         type: String,
         required: true,
     },
+    imagen: {
+        type: String,
+    },
+    deporte: Schema.ObjectId,
     estado: {
         type: String,
         default: 'activo'
-    },
-    cantJugadores: {
-        type: Number,
-        required: true,
     },
     fechaInicio: {
         type: Date,

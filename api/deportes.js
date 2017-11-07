@@ -7,8 +7,9 @@ let deporteJSON;
 router.post(baseUrl + 'alta', function (req, res) {
     if (!req.body.deporte)
         res.send("Falta parametros");
-    deporteJSON = JSON.parse(req.body.deporte);
-
+    //deporteJSON = JSON.parse(req.body.deporte);
+    deporteJSON = req.body.deporte;
+    
     Deporte.create(deporteJSON, function (err, deporte) {
         if (err) {
             let error = new Error("Error al guardar el deporte");

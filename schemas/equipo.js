@@ -12,9 +12,16 @@ const equipoSchema = new Schema({
         default: 'activo'
     },
     imagen: {
+        type: String,
+        required: false,
+    },
+    deporte: [Schema.ObjectId],
+    /*
+    imagen: {
         data: Buffer,
         contentType: String
     }
+    */
 });
 
 

@@ -5,6 +5,8 @@
       <tr>
         <th>#</th>
         <th>Deporte</th>
+        <th>Imagen</th>
+        <th>Descripcion</th>
         <th>Torneos Asociados</th>
         <th>Estado</th>
         <th>Acciones</th>
@@ -14,6 +16,8 @@
       <tr ng-repeat="deporte in deporteCtrl.deportes">
         <th scope="row">1</th>
         <td>{{deporte.nombre}}</td>
+        <td>{{deporte.logo}}</td>
+        <td>{{deporte.descripcion}}</td>
         <td>
           <ul>
             <li ng-repeat="torneo in deporte.torneos">{{torneo.nombre}}</li>

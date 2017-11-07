@@ -76,7 +76,7 @@ export default function (app) {
                 url: `/admin/torneos/lista`,
                 templateUrl: `${window.BASE_URL}/resources/views/admin/torneos/index.html`,
                 controller: 'TorneoController',
-                controllerAs: 'homtorneoCtrleCtrl'
+                controllerAs: 'torneoCtrl'
             })
             .state('crearTorneo', {
                 url: `/admin/torneos/crear`,

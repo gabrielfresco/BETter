@@ -11,6 +11,10 @@ const deporteSchema = new Schema({
     type: String,
     required: false,
   },
+  logo: {
+    type:String,
+    required: false,
+  },
   estado: {
     type: String,
     required: true,

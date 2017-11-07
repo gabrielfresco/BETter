@@ -20,19 +20,23 @@ export default function(app) {
             let params = { torneo : torneo }
             
             TorneoService.modificar(params)
-                .then(
-                    function(d) {
-                        Notification.success('Actualizado correctamente')
-                        getTorneos();
-                    },
-                    function(errResponse){
-                        Notification.error('Se produjo un error')
-                        console.error('Error actulizando el estado');
-                    }
-                );
+            .then(
+                function(d) {
+                    Notification.success('Actualizado correctamente')
+                    getTorneos();
+                },
+                function(errResponse){
+                	Notification.error('Se produjo un error')
+                    console.error('Error actulizando el estado');
+                }
+            );
         }
+
         this.save = () => {
+            console.log(self);
+            
             let params = { torneo: self.torneo }
+            console.log("Ahora params:", params);
 
             TorneoService.saveTorneo(params)
             .then(
@@ -45,6 +49,7 @@ export default function(app) {
                     console.error('Error recuperando torneos');
                 }
             );
+            
         }
 
 		function getTorneos() {
