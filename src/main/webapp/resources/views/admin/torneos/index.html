@@ -39,7 +39,9 @@
             </ul>
           </td>
           <td>{{torneo.estado}}</td>
-          <td><button type="button" class="btn btn-info">Modificar</button> <button type="button" class="btn btn-warning">Deshabilitar</button>            <button type="button" class="btn btn-danger">Eliminar</button></td>
+          <td><button type="button" class="btn btn-info">Modificar</button> <button type="button" class="btn btn-warning" ng-click="torneoCtrl.cambiarEstado(torneo)">
+            <span ng-if="torneo.estado == 'activo'">Deshabilitar</span>
+            <span ng-if="torneo.estado == 'inactivo'">Habilitar</span>
         </tr>
       </tbody>
     </table>

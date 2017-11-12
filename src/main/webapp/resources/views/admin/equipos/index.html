@@ -27,12 +27,14 @@
       </thead>
       <tbody>
         <tr ng-repeat="equipo in equipoCtrl.equipos">
-          <th scope="row">1</th>
+          <th scope="row">{{$index + 1}}</th>
           <td>{{equipo.nombre}}</td>
           <td>{{equipo.deporte}}</td>
           <td>{{equipo.imagen}}</td>
           <td>{{equipo.estado}}</td>
-          <td><button type="button" class="btn btn-info">Modificar</button> <button type="button" class="btn btn-warning">Deshabilitar</button>            <button type="button" class="btn btn-danger">Eliminar</button></td>
+          <td><button type="button" class="btn btn-info">Modificar</button> <button type="button" class="btn btn-warning" ng-click="equipoCtrl.cambiarEstado(equipo)">
+            <span ng-if="equipo.estado == 'activo'">Deshabilitar</span>
+            <span ng-if="equipo.estado == 'inactivo'">Habilitar</span>
         </tr>
       </tbody>
     </table>

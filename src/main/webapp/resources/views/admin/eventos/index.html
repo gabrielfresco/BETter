@@ -15,14 +15,16 @@
     <tbody>
         
       <tr ng-repeat="evento in eventoCtrlAdmin.eventos">
-        <th scope="row">1</th>
+        <th scope="row">{{$index + 1}}</th>
         <td>{{evento.deporte}}</td>
         <td>{{evento.torneo}}</td>
         
         <td>{{evento.resultado1.idEquipo}} VS {{evento.resultado2.idEquipo}}</td>
         <td>{{evento.fecha}}</td>
         <td>{{evento.estado}}</td>
-        <td><button type="button" class="btn btn-warning" ng-click="eventoCtrlAdmin.modificarEvento(evento)">Modificar</button>
+        <td><button type="button" class="btn btn-info">Modificar</button> <button type="button" class="btn btn-warning" ng-click="eventoCtrl.cambiarEstado(evento)">
+          <span ng-if="evento.estado == 'activo'">Deshabilitar</span>
+          <span ng-if="evento.estado == 'inactivo'">Habilitar</span>
       </td>
       </tr>
     </tbody>

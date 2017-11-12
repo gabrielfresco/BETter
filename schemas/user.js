@@ -10,7 +10,28 @@ const UserSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
-    username: {
+    domicilio: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    edad: {
+        type: Number,
+        required: true,
+        trim: true
+    },
+    estado: {
+        type: String,
+        default: 'activo',
+        trim: true
+    },
+    puntos: {
+        type: Number,
+        default: 0,
+        required: true,
+        trim: true
+    },
+    nickname: {
         type: String,
         unique: true,
         required: true,
@@ -23,6 +44,22 @@ const UserSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true,
+    },
+    experiencia: {
+        type: Number,
+        default: 0
+    },
+    tipoUsuario: {
+        type: String,
+        default: "normal"
+    },
+    nivel: {
+        type: Number,
+        default: 1
+    },
+    caducidad: {
+        type: Date,
+        default: "1970-01-01"
     }
 });
 

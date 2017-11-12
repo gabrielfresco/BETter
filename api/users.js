@@ -1,32 +1,64 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../schemas/user');
+const baseUrl = '/api/user/';
 
-router.post('/register', function (req, res) {
-    console.log("LLEGO", req.body)
-    if (req.body.email &&
-        req.body.username &&
-        req.body.password &&
-        req.body.passwordConf) {
-        let userData = {
-            email: req.body.email,
-            username: req.body.username,
-            birthDate: new Date(),//req.body.birthDate,
-            password: req.body.password,
+let userJSON;
+
+
+router.post(baseUrl + 'register', function (req, res) {
+    if (!req.body.user)
+        return res.send("Falta parametros");
+    //userJSON = JSON.parse(req.body.user);
+    userJSON = req.body.user;
+
+    User.create(userJSON, function (err, user) {
+        if (err) {
+            let error = new Error("Error al guardar el user");
+            error.status = 401;
+           // console.log("user",user);
+            console.log("ERROR", err);
+            res.send(error);
+        } else {
+            console.log("GUARDADO OK", user);
+            res.send("ok")
         }
+    })
+});
 
-        console.log("TODOS PARAMS SETTEADOS")
-        //use schema.create to insert data into the db
-        User.create(userData, function (err, user) {
-            if (err) {
-                console.log("ERROR", err)
-                //return next(err)
-            } else {
-                console.log("user", user)
-                return res.redirect('/');
-            }
-        });
-    }
+router.get(baseUrl + 'getAll', function (req, res) {
+    User.find({}, function (err, user) {
+        if (err) {
+            let error = new Error("Error al lista user");
+            error.status = 402;
+            res.send(error);
+        } else {
+            console.log("Lista user", user);
+            res.send(user);
+        }
+    });
+})
+
+//Modificar
+router.post(baseUrl + 'modificar', function (req, res) {
+
+    if (!req.body.user)
+        return res.send("Faltan Parametros");
+
+    //userJSON = JSON.parse(req.body.user);
+    userJSON = req.body.user;
+
+    User.update({ _id: userJSON._id }, { $set: userJSON }, function (err, user) {
+        if (err) {
+            console.log(err);
+            let error = new Error("Error al actualizar el user");
+            error.status = 401;
+            res.send(error);
+        } else {
+            console.log("Actualiza el user", user);
+            res.send(user);
+        }
+    });
 });
 
 

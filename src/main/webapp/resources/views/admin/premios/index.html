@@ -34,7 +34,9 @@
           <td>{{premio.valor}}</td>
           <td><img src="../../resources/assets/images-rewards/paypal.png" class="img-fluid-teams-rewards"></td>
           <td>{{premio.estado}}</td>
-          <td><button type="button" class="btn btn-info">Modificar</button> <button type="button" class="btn btn-warning">Deshabilitar</button>            <button type="button" class="btn btn-danger">Eliminar</button></td>
+          <td><button type="button" class="btn btn-info">Modificar</button> <button type="button" class="btn btn-warning" ng-click="premioCtrl.cambiarEstado(premio)">
+            <span ng-if="premio.estado == 'activo'">Deshabilitar</span>
+            <span ng-if="premio.estado == 'inactivo'">Habilitar</span>
         </tr>
       </tbody>
     </table>
