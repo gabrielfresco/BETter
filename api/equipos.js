@@ -2,10 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Equipo = require('../schemas/equipo');
 const baseUrl = '/api/equipo/';
-const multiparty = require('connect-multiparty'),
-multipartyMiddleware = multiparty();
-const fs = require('fs');
-const imagePath = '/home/rodebian/Desktop/UTN/supervisada/BETter/src/main/webapp/resources/assets/';
 let equipoJSON;
 
 //Atributos: nombre, estado, imagen     
@@ -16,7 +12,6 @@ router.post(baseUrl + 'alta', function (req, res) {
 
     let equipo = req.body.equipo;
     let toUpload = req.body.file;
-    console.log("FILE", req.body);
     //let equipo = JSON.parse(req.body.equipo);
 
     Equipo.create(equipo, function (err, equipo) {
@@ -25,22 +20,8 @@ router.post(baseUrl + 'alta', function (req, res) {
             error.status = 401;
             console.log("ERROR", err);
             res.send(error);
-        } else {
-            console.log("GUARDADO OK", equipo);
-            let file = toUpload;
-            fs.readFile(file.path, function (err, data) {
-            // set the correct path for the file not the temporary one from the API:
-                file.path = imagePath + equipo._id + ".png";
-        
-                // copy the data from the req.files.file.path and paste it to file.path
-                fs.writeFile(file.path, data, function (err) {
-                    if (err) {
-                        return console.warn(err);
-                    }
-                    console.log("The file: " + file.name + " was saved to " + file.path);
-                });
-             });
-            res.send("ok");
+        } else {           
+            res.send(equipo);
         }
     })
 });
