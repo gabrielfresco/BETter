@@ -15,7 +15,10 @@ const equipoSchema = new Schema({
         type: String,
         required: false,
     },
-    deporte: [Schema.ObjectId],
+    deporte: {
+        type: Schema.ObjectId,
+        required: true,
+    }
     /*
     imagen: {
         data: Buffer,

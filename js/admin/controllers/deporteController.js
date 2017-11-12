@@ -5,7 +5,6 @@ export default function(app) {
 	    function ($scope, $timeout, $q, DeporteService, Notification) {
 		
 		const self = this;
-        
         this.deporte = {};
         this.deportes;
 
@@ -38,7 +37,12 @@ export default function(app) {
             DeporteService.saveDeporte(params)
             .then(
                 function(d) {
-                    Notification.success('Guardado correctamente')
+                    if(d.data.status != 401) {
+                        Notification.success('Guardado correctamente')
+                        self.deporte = {};  
+                    } else {
+                        Notification.error('Se produjo un error')
+                    }
                     getDeportes();
                 },
                 function(errResponse){

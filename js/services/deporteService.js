@@ -11,6 +11,7 @@ export default function (app) {
             getDeportes: getDeportes,
             modificar: modificar,
             saveDeporte: saveDeporte,
+            getDeportesActivos: getDeportesActivos,
         };
 
         return factory;
@@ -19,6 +20,13 @@ export default function (app) {
             return $http({
                 method: 'GET',
                 url: API_BASE_URL + '/getAll'
+            });
+        }
+
+        function getDeportesActivos() {
+            return $http({
+                method: 'GET',
+                url: API_BASE_URL + '/getAllActives'
             });
         }
 

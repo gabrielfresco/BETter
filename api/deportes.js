@@ -3,6 +3,7 @@ const router = express.Router();
 const Deporte = require('../schemas/deporte');
 const baseUrl = '/api/deporte/';
 let deporteJSON;
+const estadoActivo = 'activo';
 
 router.post(baseUrl + 'alta', function (req, res) {
     if (!req.body.deporte)
@@ -36,6 +37,20 @@ router.get(baseUrl + 'getAll', function (req, res) {
 
     });
 })
+
+router.get(baseUrl + 'getAllActives', function (req, res) {
+    Deporte.find({estado: estadoActivo}, function (err, deportes) {
+        if (err) {
+            let error = new Error("Error al lista deportes");
+            error.status = 402;
+            return res.send(error);
+        }
+        console.log("Lista deportes", deportes);
+        res.send(deportes);
+
+    });
+})
+
 
 //Modificar
 router.post(baseUrl + 'modificar', function (req, res) {

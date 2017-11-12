@@ -8,6 +8,7 @@ module.exports = {
     'jquery': ['jquery'],
     'angular': ['angular', 'angular-ui-router', 'angular-ui-notification'],
     //'moment': ['moment'],
+    'fileupload': ['ng-file-upload'],
     'bootstrap': ['bootstrap']
 	
   },

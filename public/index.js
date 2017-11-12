@@ -4,7 +4,8 @@ import uiBootstrap from 'angular-ui-bootstrap';
 import notification from 'angular-ui-notification';
 import localyticsDirectives from 'angular-chosen-localytics';
 import routes from '../routes/routes.js';
-import UrlHelper from '../js/urlHelper.js'
+import UrlHelper from '../js/urlHelper.js';
+import ngFileUpload from 'ng-file-upload';
 
 //Controllers admin
 import deporteCtrl from '../js/admin/controllers/deporteController.js'
@@ -27,7 +28,7 @@ import apuestaService from '../js/services/apuestaService.js'
 
 window.BASE_URL = "http://localhost:3000";
 
-export const app = angular.module('app', ['ui.router', 'ui-notification', 'localytics.directives', uiBootstrap]);
+export const app = angular.module('app', ['ui.router', 'ui-notification', 'localytics.directives', uiBootstrap, ngFileUpload]);
 
 routes(app);
 

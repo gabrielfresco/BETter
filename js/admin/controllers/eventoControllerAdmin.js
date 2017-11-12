@@ -19,7 +19,12 @@ export default function(app) {
             EventoService.saveEvento(params)
             .then(
                 function(d) {
-                    Notification.success('Guardado correctamente')
+                    if(d.data.status != 401) {
+                        Notification.success('Guardado correctamente')
+                        self.evento = {};  
+                    } else {
+                        Notification.error('Se produjo un error')
+                    }
                     getEventos();
                 },
                 function(errResponse){

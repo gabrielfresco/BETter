@@ -41,7 +41,12 @@ export default function(app) {
             TorneoService.saveTorneo(params)
             .then(
                 function(d) {
-                    Notification.success('Guardado correctamente')
+                    if(d.data.status != 401) {
+                        Notification.success('Guardado correctamente')
+                        self.estado = {};  
+                    } else {
+                        Notification.error('Se produjo un error')
+                    }
                     getTorneos();
                 },
                 function(errResponse){
