@@ -34,16 +34,14 @@ export default function(app) {
         }
 
         this.save = () => {
-            debugger
-            let params = { equipo: self.equipo, file: self.file }
+            let params = { equipo: self.equipo }
 
-            //self.upload(self.file);
             EquipoService.saveEquipo(params)
             .then(
                 function(d) {
-                    
                     getEquipos();
                     if(d.data.status != 401) {
+                        self.upload(self.file, d.data._id);
                         Notification.success('Guardado correctamente')
                         self.equipo = {};  
                     } else {
@@ -57,6 +55,9 @@ export default function(app) {
             );
         }
 
+        this.getImg = (id) => {
+            return '../../resources/assets/' + id +'.png'
+        }
 		function getEquipos() {
 			EquipoService.getEquipos()
             .then(
@@ -84,10 +85,10 @@ export default function(app) {
         }
         
 
-        this.upload = function (file) {
+        this.upload = function (file, nombre) {
             Upload.upload({
                 url: "http://localhost:3000/api/upload",
-                data: {file: file}
+                data: {file: file, nombre: nombre}
             }).then(function (resp) {
                 console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
             }, function (resp) {

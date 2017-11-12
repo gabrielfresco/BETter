@@ -30,7 +30,7 @@
           <th scope="row">{{$index + 1}}</th>
           <td>{{equipo.nombre}}</td>
           <td>{{equipo.deporte}}</td>
-          <td>{{equipo.imagen}}</td>
+          <td><img src="{{equipoCtrl.getImg(equipo._id)}}" width="50"></td>
           <td>{{equipo.estado}}</td>
           <td><button type="button" class="btn btn-info">Modificar</button> <button type="button" class="btn btn-warning" ng-click="equipoCtrl.cambiarEstado(equipo)">
             <span ng-if="equipo.estado == 'activo'">Deshabilitar</span>
