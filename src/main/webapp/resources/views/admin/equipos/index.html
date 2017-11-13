@@ -32,7 +32,7 @@
           <td>{{equipo.deporte}}</td>
           <td><img src="{{equipoCtrl.getImg(equipo._id)}}" width="50"></td>
           <td>{{equipo.estado}}</td>
-          <td><button type="button" class="btn btn-info">Modificar</button> <button type="button" class="btn btn-warning" ng-click="equipoCtrl.cambiarEstado(equipo)">
+          <td><button type="button" class="btn btn-info" ng-click="equipoCtrl.editar(equipo)">Modificar</button> <button type="button" class="btn btn-warning" ng-click="equipoCtrl.cambiarEstado(equipo)">
             <span ng-if="equipo.estado == 'activo'">Deshabilitar</span>
             <span ng-if="equipo.estado == 'inactivo'">Habilitar</span>
         </tr>

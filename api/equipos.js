@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Equipo = require('../schemas/equipo');
 const baseUrl = '/api/equipo/';
+const mongoose = require('mongoose');
 let equipoJSON;
 
 //Atributos: nombre, estado, imagen     
@@ -38,6 +39,35 @@ router.get(baseUrl + 'getAll', function (req, res) {
         }
     });
 })
+
+router.post(baseUrl + 'getById', function (req, res) {
+    Equipo.aggregate([{
+        $match: {
+            _id: mongoose.Types.ObjectId(req.body.id)
+        }
+    }, {
+        $lookup: {
+            from: "deportes",
+            localField: "deporte",
+            foreignField: "_id",
+            as: "deporte"
+        }
+    }, {
+        $unwind: {
+            path: "$deporte",
+            preserveNullAndEmptyArrays: true
+        }
+    }], function (err, evento) {
+        if (err) {
+            let error = new Error("Error al buscar equipo");
+            error.status = 401;
+            res.send(error);
+        } else {
+            console.log("evento", evento);
+            res.send(evento);
+        }
+    });
+});
 
 //Modificar
 router.post(baseUrl + 'modificar', function (req, res) {

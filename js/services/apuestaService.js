@@ -24,7 +24,6 @@ export default function (app) {
         }
 
         function getById(data) {
-            debugger
             return $http({
                 method: 'POST',
                 url: API_BASE_URL + '/getById' ,

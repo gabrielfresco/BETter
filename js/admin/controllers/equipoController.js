@@ -1,14 +1,15 @@
 'use strict';
 
 export default function(app) {
-	app.controller('EquipoController', ['$scope', '$timeout', '$q', 'EquipoService', 'DeporteService', 'Notification', 'Upload',     
-	    function ($scope, $timeout, $q, EquipoService,DeporteService, Notification, Upload) {
+	app.controller('EquipoController', ['$scope', '$timeout', '$q', '$stateParams', 'UrlHelper', 'EquipoService', 'DeporteService', 'Notification', 'Upload',     
+	    function ($scope, $timeout, $q, $stateParams, UrlHelper, EquipoService,DeporteService, Notification, Upload) {
 		
 		const self = this;
         this.equipo = {};
         this.equipos;
         this.deportes = [];
         this.file;
+        this.isEdit = $stateParams.id;
 
         this.cambiarEstado = (equipo) => {
             let estado = 'activo';
@@ -36,23 +37,37 @@ export default function(app) {
         this.save = () => {
             let params = { equipo: self.equipo }
 
-            EquipoService.saveEquipo(params)
-            .then(
-                function(d) {
-                    getEquipos();
-                    if(d.data.status != 401) {
-                        self.upload(self.file, d.data._id);
-                        Notification.success('Guardado correctamente')
-                        self.equipo = {};  
-                    } else {
+            if(!self.isEdit) {
+                EquipoService.saveEquipo(params)
+                .then(
+                    function(d) {
+                        getEquipos();
+                        if(d.data.status != 401) {
+                            self.upload(self.file, d.data._id);
+                            Notification.success('Guardado correctamente')
+                            self.equipo = {};  
+                        } else {
+                            Notification.error('Se produjo un error')
+                        }
+                    },
+                    function(errResponse){
                         Notification.error('Se produjo un error')
+                        console.error('Error recuperando equipos');
                     }
-                },
-                function(errResponse){
-                	Notification.error('Se produjo un error')
-                    console.error('Error recuperando equipos');
-                }
-            );
+                );
+            } else {
+                EquipoService.modificar(params)
+                .then(
+                    function(d) {
+                        Notification.success('Actualizado correctamente')
+                        getEquipos();
+                    },
+                    function(errResponse){
+                        Notification.error('Se produjo un error')
+                        console.error('Error actulizando el estado');
+                    }
+                );
+            }
         }
 
         this.getImg = (id) => {
@@ -72,7 +87,7 @@ export default function(app) {
         }
         
         function getDeportesActivos() {
-			DeporteService.getDeportesActivos()
+			DeporteService.getDeportes()
             .then(
                 function(d) {
                 	self.deportes = d.data;
@@ -84,6 +99,19 @@ export default function(app) {
             );
         }
         
+        function getEquipo() {
+            let params = { id : $stateParams.id }
+			EquipoService.getById(params)
+            .then(
+                function(d) {
+                	self.equipo = d.data[0];
+                },
+                function(errResponse){
+                	Notification.error('Se produjo un error al buscar el equipo')
+                    console.error('Error recuperando equipo');
+                }
+            );
+        }
 
         this.upload = function (file, nombre) {
             Upload.upload({
@@ -99,6 +127,13 @@ export default function(app) {
             });
         };
 
+        this.editar = (equipo) => {
+            UrlHelper.go('editarEquipo', {id: equipo._id}, true);
+        }
+
+
+        if(this.isEdit)
+            getEquipo();
         getDeportesActivos();
         getEquipos();
 	}]);

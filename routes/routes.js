@@ -42,6 +42,12 @@ export default function (app) {
                 controller: 'EquipoController',
                 controllerAs: 'equipoCtrl'
             })
+            .state('editarEquipo', {
+                url: `/admin/equipos/crear/{id:string}`,
+                templateUrl: `${window.BASE_URL}/resources/views/admin/equipos/crear.html`,
+                controller: 'EquipoController',
+                controllerAs: 'equipoCtrl'
+            })
             .state('listaPremios', {
                 url: `/admin/premios/lista`,
                 templateUrl: `${window.BASE_URL}/resources/views/admin/premios/index.html`,

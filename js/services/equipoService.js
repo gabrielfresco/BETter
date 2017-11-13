@@ -11,6 +11,7 @@ export default function (app) {
             getEquipos: getEquipos,
             modificar: modificar,
             saveEquipo: saveEquipo,
+            getById: getById,
         };
 
         return factory;
@@ -26,6 +27,14 @@ export default function (app) {
             return $http({
                 method: 'POST',
                 url: API_BASE_URL + '/modificar',
+                data: data
+            });
+        }
+
+        function getById(data) {
+            return $http({
+                method: 'POST',
+                url: API_BASE_URL + '/getById' ,
                 data: data
             });
         }
