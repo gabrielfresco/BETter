@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" data-livestyle-extension="available">
-
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="icon" href="https://getbootstrap.com/favicon.ico">
-</head>
-
-<body id="login-adm-page">
-  <!-- Aca comienza el content -->
-  <div class="register-card">
+<!--div class="register-card">
     <div class="container">
       <div align="center">
         <h1>Nuevo Torneo</h1>
@@ -30,17 +17,7 @@
               <input class="form-control" ng-model="torneoCtrl.torneo.imagen" ng-value="torneoCtrl.torneo.imagen" type="text" required="" placeholder="logo" id="imagen">
             </div>
           </div>
-        <!--
-        <div class="form-group row">
-          <label for="logoTorneo" class="col-sm-2 col-form-label">Logo</label>
-          <div class="col-sm-10">
-            <label class="custom-file">
-                          <input type="file" id="logoTorneo" class="custom-file-input">
-                          <span class="custom-file-control"></span>
-                        </label>
-          </div>
-        </div>
-      -->
+
         <div class="form-group row">
           <label for="dateStartTorneo" class="col-2 col-form-label">Fecha de Inicio</label>
           <div class="col-sm-10">
@@ -81,18 +58,68 @@
       </form>
     </div>
   </div>
+  </div-->
+
+<div class="form-page">
+  <div class="page-header no-margin-bottom">
+    <div class="container-fluid">
+      <h2 class="h5 no-margin-bottom">Torneos</h2>
+    </div>
   </div>
+  <ul class="breadcrumb">
+    <div class="container-fluid">
+      <li class="breadcrumb-item"><a ui-sref="listaEventos">Home</a></li>
+      <li class="breadcrumb-item active">Crear</li>
+    </div>
+  </ul>
+  <div class="row block">
+    <div class="col-md-6">
+      <div class="block-body">
+        <form>
+          <div class="form-group">
+            <label class="form-control-label">Nombre</label>
+            <input class="form-control" ng-model="torneoCtrl.torneo.nombre" ng-value="torneoCtrl.torneo.nombre" type="text" required=""
+              placeholder="nombre" id="nombreTorneo">
+          </div>
 
-  <!-- Aca va el for de eventos -->
+          <div class="form-group">
+            <label class="form-control-label">Imagen</label>
+            <input class="form-control" ng-model="torneoCtrl.torneo.imagen" ng-value="torneoCtrl.torneo.imagen" type="text" required=""
+              placeholder="logo" id="imagen">
+          </div>
 
+          <div class="form-group">
+            <label class="form-control-label">Fecha de Inicio</label>
+            <input class="form-control" ng-model="torneoCtrl.torneo.fechaInicio" type="date" id="dateStartTorneo">
+          </div>
 
-  <!-- Aca termina el for de eventos -->
-  <!-- Carga mas rapido si esta al final los js -->
-  <script src="../../js/jquery.min.js"></script>
-  <script src="../../js/popper.min.js.descarga"></script>
-  <script src="../../js/bootstrap.min.js.descarga"></script>
-  <!-- IE10 bug -->
-  <script src="../../js/ie10-viewport-bug-workaround.js.descarga"></script>
-</body>
+          <div class="form-group">
+            <label class="form-control-label">Fecha de Fin</label>
+            <input class="form-control" ng-model="torneoCtrl.torneo.fechaFin" type="date" id="dateEndTorneo">
+          </div>
 
-</html>
+          <div class="form-group">
+            <label class="form-control-label">Deporte</label>
+            <div class="select">
+              <select name="account" class="form-control">
+                  <option ng-repeat="deporte in torneoCtrl.deportes">{{deporte.nombre}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-control-label">Equipos </label>
+            <div class="select">
+              <select multiple="" name="account" class="form-control">
+                  <option ng-repeat="equipos in torneoCtrl.equipos">{{deporte.equipo}}</option>
+                            </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="button" value="Guardar" class="btn btn-primary" ng-click="equipoCtrl.save()">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
