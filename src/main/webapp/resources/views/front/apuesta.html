@@ -1,15 +1,16 @@
-<!DOCTYPE html>
-<html lang="en" data-livestyle-extension="available">
-
-<body>
-  <!-- Main Content -->
-  <main class="col-sm-12 ml-sm-auto col-md-12 pt-3 bg-light" role="main">
-    <h1>Eventos</h1>
-    <div class="container">
-
-
-      <!-- Aca va el for de eventos -->
-
+<div class="form-page">
+  <div class="page-header no-margin-bottom">
+    <div class="container-fluid">
+      <h2 class="h5 no-margin-bottom">Apostar</h2>
+    </div>
+  </div>
+  <ul class="breadcrumb">
+    <div class="container-fluid">
+      <li class="breadcrumb-item"><a ui-sref="listaEventos">Home</a></li>
+    </div>
+  </ul>
+  <div class="col-lg-12">
+    <div class="block">
       <div class="card card-futbol">
         <div class="card-header card-header-futbol">
           <h3>Futbol - Liga Argentina</h3>
@@ -48,21 +49,9 @@
           </div>
         </form>
         <p class="lead text-center color-white">
-           {{apuestaCtrl.evento.fecha}}
+          {{apuestaCtrl.evento.fecha}}
         </p>
       </div>
     </div>
-
-    </div>
-
-
-    <!-- Aca termina el for de eventos -->
-    <!-- Carga mas rapido si esta al final los js -->
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/popper.min.js.descarga"></script>
-    <script src="../js/bootstrap.min.js.descarga"></script>
-    <!-- IE10 bug -->
-    <script src="../js/ie10-viewport-bug-workaround.js.descarga"></script>
-</body>
-
-</html>
+  </div>
+</div>

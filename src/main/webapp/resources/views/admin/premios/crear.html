@@ -1,60 +1,62 @@
-<div class="form-page">
-  <div class="page-header no-margin-bottom">
-    <div class="container-fluid">
-      <h2 class="h5 no-margin-bottom">Premios</h2>
-    </div>
+<div class="page-header no-margin-bottom">
+  <div class="container-fluid">
+    <h2 class="h5 no-margin-bottom">Premios</h2>
   </div>
-  <ul class="breadcrumb">
-    <div class="container-fluid">
-      <li class="breadcrumb-item"><a ui-sref="listaEventos">Home</a></li>
-      <li class="breadcrumb-item active">Crear</li>
-    </div>
-  </ul>
-  <div class="row block">
-    <div class="col-md-6">
-      <div class="block-body">
-        <form>
-          <div class="form-group">
-            <label class="form-control-label">Nombre</label>
-            <input class="form-control" ng-model="premioCtrl.premio.nombre" ng-value="premioCtrl.premio.nombre" type="text" required=""
-              placeholder="nombre" id="nombreEquipo">
-          </div>
-          <div class="form-group">
-            <label class="form-control-label">Imagen</label>
-            <div class="select">
-              <input type="file" ngf-select="" ng-model="premioCtrl.file" name="file" ngf-accept="'image/*'" required="">
+</div>
+<ul class="breadcrumb">
+  <div class="container-fluid">
+    <li class="breadcrumb-item"><a ui-sref="listaEventos">Home</a></li>
+    <li class="breadcrumb-item active">Crear</li>
+  </div>
+</ul>
+<section>
+  <div class="form-page">
+    <div class="row block">
+      <div class="col-md-6">
+        <div class="block-body">
+          <form>
+            <div class="form-group">
+              <label class="form-control-label">Nombre</label>
+              <input class="form-control" ng-model="premioCtrl.premio.nombre" ng-value="premioCtrl.premio.nombre" type="text" required=""
+                placeholder="nombre" id="nombreEquipo">
             </div>
-          </div>
-
-          <div class="form-group">
-            <label class="form-control-label">Puntos</label>
-            <div class="select">
-              <input class="form-control" ng-model="premioCtrl.premio.valor" ng-value="premioCtrl.premio.valor" type="number" required=""
-                placeholder="Puntos" id="puntos">
+            <div class="form-group">
+              <label class="form-control-label">Imagen</label>
+              <div class="select">
+                <input type="file" ngf-select="" ng-model="premioCtrl.file" name="file" ngf-accept="'image/*'" required="">
+              </div>
             </div>
-          </div>
 
-          <div class="form-group">
-            <label class="form-control-label">Valor</label>
-            <div class="select">
-              <input class="form-control" ng-model="premioCtrl.premio.valor" ng-value="premioCtrl.premio.valor" type="number" required=""
-                placeholder="Puntos" id="puntos">
+            <div class="form-group">
+              <label class="form-control-label">Puntos</label>
+              <div class="select">
+                <input class="form-control" ng-model="premioCtrl.premio.valor" ng-value="premioCtrl.premio.valor" type="number" required=""
+                  placeholder="Puntos" id="puntos">
+              </div>
             </div>
-          </div>
 
-          <div class="form-group">
-            <label class="form-control-label">Descripcion</label>
-            <div class="select">
+            <div class="form-group">
+              <label class="form-control-label">Valor</label>
+              <div class="select">
+                <input class="form-control" ng-model="premioCtrl.premio.valor" ng-value="premioCtrl.premio.valor" type="number" required=""
+                  placeholder="Puntos" id="puntos">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-control-label">Descripcion</label>
+              <div class="select">
                 <textarea class="form-control" ng-model="premioCtrl.premio.descripcion" ng-value="premioCtrl.premio.descripcion" id="descripcion"
-                rows="3"></textarea>
+                  rows="3"></textarea>
+              </div>
             </div>
-          </div>
 
-          <div class="form-group">
-            <input type="button" value="Guardar" class="btn btn-primary" ng-click="equipoCtrl.save()">
-          </div>
-        </form>
+            <div class="form-group">
+              <input type="button" value="Guardar" class="btn btn-primary" ng-click="equipoCtrl.save()">
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</section>

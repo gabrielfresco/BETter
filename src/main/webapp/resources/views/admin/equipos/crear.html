@@ -1,43 +1,45 @@
-<div class="form-page">
-  <div class="page-header no-margin-bottom">
-    <div class="container-fluid">
-      <h2 class="h5 no-margin-bottom">Equipos</h2>
-    </div>
+<div class="page-header no-margin-bottom">
+  <div class="container-fluid">
+    <h2 class="h5 no-margin-bottom">Equipos</h2>
   </div>
-  <ul class="breadcrumb">
-    <div class="container-fluid">
-      <li class="breadcrumb-item"><a ui-sref="listaEventos">Home</a></li>
-      <li class="breadcrumb-item active">Crear</li>
-    </div>
-  </ul>
-  <div class="row block">
-    <div class="col-md-6">
-      <div class="block-body">
-        <form>
-          <div class="form-group">
-            <label class="form-control-label">Nombre</label>
-            <input class="form-control" ng-model="equipoCtrl.equipo.nombre" ng-value="equipoCtrl.equipo.nombre" type="text" required=""
-              placeholder="nombre" id="nombreEquipo">
-          </div>
-          <div class="form-group">
-            <label class="form-control-label">Logo</label>
-            <div class="select">
-              <input type="file" ngf-select="" ng-model="equipoCtrl.file" name="file" ngf-accept="'image/*'" required="">
+</div>
+<ul class="breadcrumb">
+  <div class="container-fluid">
+    <li class="breadcrumb-item"><a ui-sref="listaEventos">Home</a></li>
+    <li class="breadcrumb-item active">Crear</li>
+  </div>
+</ul>
+<section>
+  <div class="form-page">
+    <div class="row block">
+      <div class="col-md-6">
+        <div class="block-body">
+          <form>
+            <div class="form-group">
+              <label class="form-control-label">Nombre</label>
+              <input class="form-control" ng-model="equipoCtrl.equipo.nombre" ng-value="equipoCtrl.equipo.nombre" type="text" required=""
+                placeholder="nombre" id="nombreEquipo">
             </div>
-          </div>
-          <div class="form-group">
-            <label class="form-control-label">Deporte</label>
-            <div class="select">
-              <select name="account" class="form-control" ng-model="equipoCtrl.equipo.deporte._id">
+            <div class="form-group">
+              <label class="form-control-label">Logo</label>
+              <div class="select">
+                <input type="file" ngf-select="" ng-model="equipoCtrl.file" name="file" ngf-accept="'image/*'" required="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-control-label">Deporte</label>
+              <div class="select">
+                <select name="account" class="form-control" ng-model="equipoCtrl.equipo.deporte._id">
                   <option ng-value="deporte._id" selected ng-repeat="deporte in equipoCtrl.deportes">{{deporte.nombre}}</option>
                 </select>
+              </div>
             </div>
-          </div>
-          <div class="form-group">
-            <input type="button" value="Guardar" class="btn btn-primary" ng-click="equipoCtrl.save()">
-          </div>
-        </form>
+            <div class="form-group">
+              <input type="button" value="Guardar" class="btn btn-primary" ng-click="equipoCtrl.save()">
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</section>

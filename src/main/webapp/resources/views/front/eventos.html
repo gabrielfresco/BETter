@@ -1,20 +1,17 @@
-<!DOCTYPE html>
-<html lang="en" data-livestyle-extension="available">
-
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="icon" href="https://getbootstrap.com/favicon.ico">
-  <title>Template</title>
-</head>
-
-<body>
-  <!-- Navbar -->
-  <main class="col-sm-12 ml-sm-auto col-md-12 pt-3 bg-light" role="main">
-    <h1>Eventos</h1>
-    <div class="container">
+<div class="form-page">
+  <div class="page-header no-margin-bottom">
+    <div class="container-fluid">
+      <h2 class="h5 no-margin-bottom">Proximos Eventos</h2>
+    </div>
+  </div>
+  <ul class="breadcrumb">
+    <div class="container-fluid">
+      <li class="breadcrumb-item"><a ui-sref="listaEventos">Home</a></li>
+      <li class="breadcrumb-item active">Lista</li>
+    </div>
+  </ul>
+  <div class="col-lg-12">
+    <div class="block">
 
       <div class="card-columns">
         <div class="card card-futbol" ng-repeat="evento in eventoCtrl.eventos">
@@ -42,12 +39,11 @@
           </div>
           <div class="card-footer bg-transparent border-transparent">
             <p class="lead text-center">
-               <button type="button" class="btn btn-primary btn-lg" ng-click="eventoCtrl.apostar(evento)">Apuestaaa</button>
+              <button type="button" class="btn btn-primary btn-lg" ng-click="eventoCtrl.apostar(evento)">Apostar</button>
             </p>
           </div>
         </div>
-
       </div>
-</body>
-
-</html>
+    </div>
+  </div>
+</div>
