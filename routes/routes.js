@@ -3,20 +3,12 @@
 export default function (app) {
     // configure our routes
     app.config(['$stateProvider', function ($stateProvider) {
-        $stateProvider
-            .state('register', {
-                url: `/register`,
-                templateUrl: `${window.BASE_URL}/resources/views/front/registro.html`,
-            })
+        $stateProvider       
             .state('home', {
                 url: `/home`,
                 templateUrl: `${window.BASE_URL}/resources/views/front/eventos.html`,
                 controller: 'EventoController',
                 controllerAs: 'eventoCtrl'
-            })
-            .state('admin', {
-                url: `/admin/login`,
-                templateUrl: `${window.BASE_URL}/resources/views/admin/login.html`,
             })
             .state('listaDeportes', {
                 url: `/admin/deportes/lista`,

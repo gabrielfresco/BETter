@@ -1,32 +1,45 @@
-<div class="container" style="background-color:gray;">
-  <h2>Lista de eventos</h2>
-  <table class="table table-striped table-inverse">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Deporte</th>
-        <th>Torneo</th>
-        <th>Rivales</th>
-        <th>Fecha y hora</th>
-        <th>Estado</th>
-        <th>Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-        
-      <tr ng-repeat="evento in eventoCtrlAdmin.eventos">
-        <th scope="row">{{$index + 1}}</th>
-        <td>{{evento.deporte}}</td>
-        <td>{{evento.torneo}}</td>
-        
-        <td>{{evento.resultado1.idEquipo}} VS {{evento.resultado2.idEquipo}}</td>
-        <td>{{evento.fecha}}</td>
-        <td>{{evento.estado}}</td>
-        <td><button type="button" class="btn btn-info">Modificar</button> <button type="button" class="btn btn-warning" ng-click="eventoCtrl.cambiarEstado(evento)">
-          <span ng-if="evento.estado == 'activo'">Deshabilitar</span>
-          <span ng-if="evento.estado == 'inactivo'">Habilitar</span>
-      </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<div class="form-page">
+  <div class="page-header no-margin-bottom">
+    <div class="container-fluid">
+      <h2 class="h5 no-margin-bottom">Eventos</h2>
+    </div>
+  </div>
+  <ul class="breadcrumb">
+    <div class="container-fluid">
+      <li class="breadcrumb-item"><a ui-sref="listaEventos">Home</a></li>
+      <li class="breadcrumb-item active">Lista</li>
+    </div>
+  </ul>
+  <div class="col-lg-12">
+    <div class="block">
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Deporte</th>
+            <th>Torneo</th>
+            <th>Rivales</th>
+            <th>Fecha y hora</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="evento in eventoCtrlAdmin.eventos">
+            <th scope="row">{{$index + 1}}</th>
+            <td>{{evento.deporte}}</td>
+            <td>{{evento.torneo}}</td>
+
+            <td>{{evento.resultado1.idEquipo}} VS {{evento.resultado2.idEquipo}}</td>
+            <td>{{evento.fecha}}</td>
+            <td>{{evento.estado}}</td>
+            <td><button type="button" class="btn btn-info">Modificar</button> <button type="button" class="btn btn-warning" ng-click="eventoCtrl.cambiarEstado(evento)">
+                    <span ng-if="evento.estado == 'activo'">Deshabilitar</span>
+                    <span ng-if="evento.estado == 'inactivo'">Habilitar</span>
+                </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
